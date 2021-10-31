@@ -6,6 +6,12 @@ import Registration2 from './registration/registration2'
 import Registration3 from './registration/registration3'
 import Registration4 from './registration/registration4'
 
+import OrderCreation1 from './OrderCreation/orderCreation1'
+import OrderCreation2 from './OrderCreation/orderCreation2'
+import OrderCreation3 from './OrderCreation/orderCreation3'
+import OrderCreation4 from './OrderCreation/orderCreation4'
+import OrderCreation5 from './OrderCreation/orderCreation5'
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -32,6 +38,22 @@ function App() {
             <Link to="/registration4">
               <li>4</li>
             </Link>
+
+            <Link to="/orderCreation1">
+              <li>orderCreation1</li>
+            </Link>
+            <Link to="/orderCreation2">
+              <li>orderCreation2</li>
+            </Link>
+            <Link to="/orderCreation3">
+              <li>orderCreation3</li>
+            </Link>
+            <Link to="/orderCreation4">
+              <li>orderCreation4</li>
+            </Link>
+            <Link to="/orderCreation5">
+              <li>orderCreation5</li>
+            </Link>
             
           </ul>
       </nav>
@@ -41,6 +63,12 @@ function App() {
           <Route path="/registration2" component={Registration2} />
           <Route path="/registration3" component={Registration3} />
           <Route path="/registration4" component={Registration4} />
+
+          <Route path="/orderCreation1" component={OrderCreation1} />
+          <Route path="/orderCreation2" component={OrderCreation2} />
+          <Route path="/orderCreation3" component={OrderCreation3} />
+          <Route path="/orderCreation4" component={OrderCreation4} />
+          <Route path="/orderCreation5" component={OrderCreation5} />
         </Switch>
       
     </Router>
