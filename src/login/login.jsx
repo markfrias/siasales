@@ -9,8 +9,10 @@ class Login extends Component {
 
             
             <div className="login-container">
-
+            <div class="image">
             <div className="left-login">
+              <h1>wilbur</h1>
+              <p>Sales information system</p>  
             <Form>
   <FormGroup className="mb-3" controlId="formBasicEmail">
     <FormLabel>Email address</FormLabel>
@@ -36,7 +38,7 @@ class Login extends Component {
             <div className="right-login">
 
             </div>
-
+            </div>
 
 
 

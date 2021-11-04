@@ -5,3 +5,13 @@
 .left-login, .right-login {
     width: 50%;
 }
+
+.image {
+    width: 40%;
+    height: 90%;
+    float: right;
+    background-size: 600px 310px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding: 0px;
+}
