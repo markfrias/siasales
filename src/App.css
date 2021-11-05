@@ -1,38 +1,43 @@
-.App {
-  text-align: center;
+@font-face{
+  src: url('./fonts/Comfortaa-VariableFont_wght.ttf');
+  font-family: comfartaa;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body{
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.f-comfartaa{
+  font-family: comfartaa;
+}
+.has-search .form-control {
+  padding-left: 2.375rem;
+  
+}
+.has-search{
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  top: 35%;
+  margin-left: 10px;
+  align-self: center;
+  /* width: 2.375rem; */
+  /* height: 2.375rem; */
+  /* line-height: 2.375rem; */
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App .side-menu{
+  min-height: 100vh;
+  position: relative;
+  /* width: 150px; */
+}
+.App .side-menu .account-item{
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
 }

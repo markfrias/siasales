@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-
+import {} from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import SideMenu from './components/SideMenu';
+import CustomerManagement from './components/CustomerManagement';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div className="row gx-3">
+          <div className="col-lg-auto w-5 col-sm-0 col-0">
+              <SideMenu/>
+          </div>
+          <div className="col">
+            <CustomerManagement/>
+          </div>
+        </div>
     </div>
   );
 }
