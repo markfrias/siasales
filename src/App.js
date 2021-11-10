@@ -5,6 +5,8 @@ import Registration1 from './registration/registration1'
 import Registration2 from './registration/registration2'
 import Registration3 from './registration/registration3'
 import Registration4 from './registration/registration4'
+import SideMenu from './components/SideMenu';
+import CustomerManagement from './components/CustomerManagement';
 
 import OrderCreation1 from './OrderCreation/orderCreation1'
 import OrderCreation2 from './OrderCreation/orderCreation2'
@@ -18,12 +20,13 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Login from './login/login';
 
 
 function App() {
   return (
-    
-    <Router>
+    <div className="App">
+          <Router>
       <nav>
           <ul>
             <Link to="/registration1">
@@ -54,6 +57,9 @@ function App() {
             <Link to="/orderCreation5">
               <li>orderCreation5</li>
             </Link>
+            <Link to="/login">
+              <li>4</li>
+            </Link>
             
           </ul>
       </nav>
@@ -69,9 +75,21 @@ function App() {
           <Route path="/orderCreation3" component={OrderCreation3} />
           <Route path="/orderCreation4" component={OrderCreation4} />
           <Route path="/orderCreation5" component={OrderCreation5} />
+          <Route path="/login" component={Login}/>
+          <Route path="/customers" component={CustomerManagement} />
         </Switch>
       
     </Router>
+
+    <div className="row gx-3">
+      <div className="col-lg-auto w-5 col-sm-0 col-0">
+          <SideMenu/>
+      </div>
+      <div className="col">
+        <CustomerManagement/>
+      </div>
+    </div>
+</div>
 
 
   );
