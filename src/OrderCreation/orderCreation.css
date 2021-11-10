@@ -1,0 +1,593 @@
+body {
+    font-family:  'Open Sans', 'Helvetica Neue', sans-serif, 'Comfortaa';
+}
+
+
+
+/**orderCreation1******************************************************/
+
+.content1 {
+    padding: 40px;
+}
+
+.content1 Button {
+    color: black;
+    padding: 0px 0px 10px 5px;
+}
+
+.back1 .angle {
+    font-size: 2em;
+    padding: 0px;
+}
+
+.title1 h1{
+    padding: 30px 0px 30px 0px;
+    font-weight: 1000;
+}
+
+.nav-row1 {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+}
+
+.nav-row1 p{
+    padding: 15px;
+    margin: 0%;
+}
+
+.nav-row1 .cust-info1 {
+    border-radius: 10px;
+    background-color: #0ABAB5;
+}
+
+.note1 {
+
+    padding: 20px 0px 40px 0px;
+}
+
+.note1 .warning1 {
+    display: flex;
+    flex-direction: row;
+    background-color: #EFEEEE;
+    border-radius: 10px;
+    padding: 10px 0px 10px 30px;
+    font-size: 16px;
+}
+
+.order-info1 {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+}
+
+.order-address1 {
+    width: 50%;
+}
+
+.order-address1 h2 {
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.order-address1 Form {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    font-size: 12px;
+    justify-content: space-evenly;
+}
+
+.order-address1 .address1 {
+    font-size: 14px;
+    padding: 0px 30px 50px 0px;
+}
+
+.order-address1 .address11 {
+    font-size: 14px;
+    padding-right: 30px;
+}
+
+.order-contact1 {
+    width: 50%;
+}
+
+.order-contact1 h2 {
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 60px;
+}
+
+.order-address1 .contact1 {
+    font-size: 14px;
+    padding-right: 30px;
+}
+
+.btn1 {
+    text-align: right;
+    padding-top: 30px;
+}
+
+.btn1 Button{
+    border-radius: 10px;
+    padding: 3px 50px 3px 50px;
+    font-size: 18px;
+    background-color: #0ABAB5;
+    font-weight: bold;
+    align-items: flex-end;
+}
+
+
+/**orderCreation2******************************************************/
+
+.content2 {
+    padding: 40px;
+}
+
+.content2 Button {
+    color: black;
+    padding: 0px 0px 10px 5px;
+}
+
+.back2 .angle {
+    font-size: 2em;
+    padding: 0px;
+}
+
+.title2 h1{
+    padding: 30px 0px 30px 0px;
+    font-weight: 1000;
+}
+
+.nav-row2 {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+}
+
+.nav-row2 p{
+    padding: 15px;
+    margin: 0%;
+}
+
+.nav-row2 .bill2 {
+    border-radius: 10px;
+    background-color: #0ABAB5;
+}
+
+.bill-info2 {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+}
+
+.bill-address2 {
+    width: 50%;
+    padding-top: 50px;
+}
+
+.bill-address2 h2 {
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.bill-address2 .address2 {
+    font-size: 14px;
+    padding: 0px 30px 50px 0px;
+}
+
+.bill-address2 .address22 {
+    font-size: 14px;
+    padding-right: 30px;
+}
+
+.bill-contact2 {
+    width: 50%;
+    padding-top: 83.5px;
+}
+
+.bill-address2 .contact2 {
+    font-size: 14px;
+    padding-right: 30px;
+}
+
+.btn2 {
+    text-align: right;
+    padding-top: 30px;
+}
+
+.btn2 Button{
+    border-radius: 10px;
+    padding: 3px 50px 3px 50px;
+    font-size: 18px;
+    background-color: #0ABAB5;
+    font-weight: bold;
+    align-items: flex-end;
+}
+
+/**orderCreation3******************************************************/
+
+.content3 {
+    padding: 40px;
+}
+
+.content3 Button {
+    color: black;
+    padding: 0px 0px 10px 5px;
+}
+
+.back3 .angle {
+    font-size: 2em;
+    padding: 0px;
+}
+
+.title3 h1{
+    padding: 30px 0px 30px 0px;
+    font-weight: 1000;
+}
+
+.nav-row3 {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+}
+
+.nav-row3 p{
+    padding: 15px;
+    margin: 0%;
+}
+
+.nav-row3 .ship3 {
+    border-radius: 10px;
+    background-color: #0ABAB5;
+}
+
+.ship-info3 {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+}
+
+.ship-address3 {
+    width: 50%;
+    padding-top: 50px;
+}
+
+.ship-address3 h2 {
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.ship-address3 .address3 {
+    font-size: 14px;
+    padding: 0px 30px 50px 0px;
+
+}
+
+.ship-address3 .address33 {
+    font-size: 14px;
+    padding-right: 30px;
+}
+
+.ship-contact3 {
+    width: 50%;
+    padding-top: 83.5px;
+}
+
+.ship-address3 .contact3 {
+    font-size: 14px;
+    padding-right: 30px;
+}
+
+.ship-details3 {
+    padding-top: 85px;
+}
+
+.ship-details3 h2 {
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn3 {
+    text-align: right;
+    padding-top: 30px;
+}
+
+.btn3 Button{
+    border-radius: 10px;
+    padding: 3px 50px 3px 50px;
+    font-size: 18px;
+    background-color: #0ABAB5;
+    font-weight: bold;
+    align-items: flex-end;
+}
+
+/**orderCreation4******************************************************/
+
+.content4 {
+    padding: 40px;
+}
+
+.content4 Button {
+    color: black;
+    padding: 0px 0px 10px 5px;
+}
+
+.back4 .angle {
+    font-size: 2em;
+    padding: 0px;
+}
+
+.title4 h1{
+    padding: 30px 0px 30px 0px;
+    font-weight: 1000;
+}
+
+.nav-row4 {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+}
+
+.nav-row4 p{
+    padding: 15px;
+    margin: 0%;
+}
+
+.nav-row4 .pay4 {
+    border-radius: 10px;
+    background-color: #0ABAB5;
+}
+
+.item4 {
+    display: flex;
+    flex-direction: row;
+    padding: 40px 0px 15px 0px;
+}
+
+.item4 h4 {
+    margin: 0;
+    font-size: 23px;
+}
+
+.item-btn4 {
+    padding: 0px 0px 0px 10px;
+}
+
+.item-btn4 Button{
+    background-color: #0ABAB5;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.cont4 {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    padding-top: 40px;
+}
+
+.cont4 .total4 {
+    padding-top: 40px;
+}
+
+.cont4 .cont-left4 {
+    width: 50%;
+    font-size: 14px;
+    padding: 0px 100px 0px 0px;
+}
+
+.cont4 .cont-mid4 {
+    width: 25%;
+}
+
+.cont-mid4 h4 {
+    font-size: 14px;
+}
+
+.cont4 .cont-right4 {
+    width: 25%;
+}
+
+.cont-right4 h4 {
+    font-size: 14px;
+}
+
+.btn4 {
+    text-align: right;
+    padding-top: 30px;
+}
+
+.btn4 Button{
+    border-radius: 10px;
+    padding: 3px 50px 3px 50px;
+    font-size: 18px;
+    background-color: #0ABAB5;
+    font-weight: bold;
+    align-items: flex-end;
+}
+
+/**orderCreation5******************************************************/
+
+.content5 {
+    padding: 40px;
+}
+
+.content5 Button {
+    color: black;
+    padding: 0px 0px 10px 5px;
+}
+
+.back5 .angle {
+    font-size: 2em;
+    padding: 0px;
+}
+
+.title5 h1{
+    padding: 30px 0px 30px 0px;
+    font-weight: 1000;
+}
+
+.nav-row5 {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+}
+
+.nav-row5 p{
+    padding: 15px;
+    margin: 0%;
+}
+
+.nav-row5 .cont5 {
+    border-radius: 10px;
+    background-color: #0ABAB5;
+}
+
+.note5 {
+
+    padding: 20px 0px 40px 0px;
+}
+
+.note5 .warning5 {
+    display: flex;
+    flex-direction: row;
+    background-color: #EFEEEE;
+    border-radius: 10px;
+    padding: 10px 0px 10px 30px;
+    font-size: 16px;
+}
+
+.date-filing5 h2{
+    font-size: 14px;
+}
+
+.cust-info5 {
+    display: flex;
+    flex-direction: row;
+    padding: 30px 0px 20px 0px;
+    max-width: 100%;
+}
+
+.cust-info5 h1 {
+    font-size: 20px;
+}
+
+.customer5 {
+    width: 50%;
+}
+
+.billing5 {
+    width: 50%;
+}
+
+.cust-details5 {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+}
+
+.cust-details5 h5 {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0;
+}
+
+.cust-details5 p {
+    font-size: 12px;
+}
+
+.info-left5 {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+
+.details-left5 {
+    width: 50%;
+}
+
+.details-left5 .left5 {
+    padding-bottom: 10px;
+}
+
+.address-info5 p{
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    margin: 0;
+}
+
+.details-right5 {
+    width: 50%;
+}
+
+.details-right5 .right5 {
+    padding-bottom: 10px;
+}
+
+.info-right5 {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+
+.order5 {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+}
+
+.order-table5 {
+    width: 60%;
+}
+
+.order-number5 {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    padding-left: 30px;
+}
+
+.order-number5 .cont-mid5 {
+    width: 60%;
+}
+
+.cont-mid5 h4 {
+    font-size: 14px;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.order-number5 .cont-right5 {
+    width: 40%;
+}
+
+.cont-right5 h4 {
+    font-size: 14px;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.order-number5 .total5{
+    padding-top: 30px;
+}
+
+.btn5 {
+    text-align: right;
+    padding-top: 50px;
+}
+
+.btn5 Button{
+    border-radius: 10px;
+    padding: 3px 50px 3px 50px;
+    font-size: 18px;
+    background-color: #0ABAB5;
+    font-weight: bold;
+    align-items: flex-end;
+}
