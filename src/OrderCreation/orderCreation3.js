@@ -24,8 +24,8 @@ function orderCreation3() {
 
             <p class="ship3">Shipping</p>
 
-            <p>Payment</p>
             <p>Contents</p>
+            <p>Summary</p>
         </div>
 
         <ProgressBar animated now={60} />
