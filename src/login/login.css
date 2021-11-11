@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 600px;
+    width: 900px;
     padding: 0 2.5rem;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .title-class {
-    height: 40%;
+    height: 60%;
     background: #0ABAB5;
 }
 
@@ -39,7 +39,8 @@ img {
     width: 100%;
 }
 
-.brand {
+.brand, .brand2{
     font-family: 'Comfortaa', cursive;
+    text-align: right;
 }
 

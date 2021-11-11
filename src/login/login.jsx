@@ -30,7 +30,7 @@ class Login extends Component {
                       <FormCheck type="checkbox" label="Check me out" />
                     </FormGroup>
                     <Button variant="primary" type="submit">
-                      Submit
+                      Login
                     </Button>
                   </Form>
                 </div>
@@ -38,7 +38,7 @@ class Login extends Component {
               <div className="right-login">
                 <div className="title-class">
                   <h1 className="brand">wilbur</h1>
-                  <p>Sales information system</p>  
+                  <h2 className="brand2">Sales information system</h2>  
                 </div>
 
                 <div className="hero">
