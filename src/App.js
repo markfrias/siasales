@@ -13,6 +13,8 @@ import OrderCreation2 from './OrderCreation/orderCreation2'
 import OrderCreation3 from './OrderCreation/orderCreation3'
 import OrderCreation4 from './OrderCreation/orderCreation4'
 import OrderCreation5 from './OrderCreation/orderCreation5'
+import OrderProcessing from './OrderCreation/orderProcessing'
+import OrderCompleted from './OrderCreation/orderCompleted'
 
 import {
   BrowserRouter as Router,
@@ -57,6 +59,13 @@ function App() {
             <Link to="/orderCreation5">
               <li>orderCreation5</li>
             </Link>
+            <Link to="/orderProcessing">
+              <li>orderProcessing</li>
+            </Link>
+            <Link to="/orderCompleted">
+              <li>orderCompleted</li>
+            </Link>
+
             <Link to="/login">
               <li>4</li>
             </Link>
@@ -75,6 +84,9 @@ function App() {
           <Route path="/orderCreation3" component={OrderCreation3} />
           <Route path="/orderCreation4" component={OrderCreation4} />
           <Route path="/orderCreation5" component={OrderCreation5} />
+          <Route path="/orderProcessing" component={OrderProcessing} />
+          <Route path="/orderCompleted" component={OrderCompleted} />
+
           <Route path="/login" component={Login}/>
           <Route path="/customers" component={CustomerManagement} />
         </Switch>
