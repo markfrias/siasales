@@ -3,9 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faEllipsisV } from '@fortawesome/free-solid-svg-icons'
 
 const CustomerManagement = () => {
-
+    
+    
     const customer = {
-        id: "0123456789",
+        _id: "0123456789",
         name: "Toyota Philippines",
         type: "Shipping Service",
         address: "51 MaryLand Street Apartment City Los Angeles, CA",
@@ -24,21 +25,69 @@ const CustomerManagement = () => {
         totalSales: "50k",
         lastTransaction: "01/07/2021"
     }
+  
+    
+
+
+
     const customersData = [customer, customer_2,customer]
+
+    const [customers, setCustomers] = useState(customersData);
+    useEffect(() => {
+        let productCustomers, shippingCustomers;
+        let customerArray = [];
+        fetch('http://localhost:8000/customers/')
+            .then(response => response.json())
+            .then(data => productCustomers = data)
+
+            fetch('https://api-cloud-shipping.klylylydeee.xyz/analytics/users', {
+                headers: {
+                    'TPSRole': "salesIntegration",
+                    'TPSAuthenticate': "Handler eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbnRlZ3JhdGlvbl9wYXJ0bmVyIjoiZDcxOTE3ZjctZWRiZC00MjFjLThlZTAtMjhjODc0OGI5NDNlIiwiaWF0IjoxNjMyNTQ0NDI4fQ.kbOpoIdeW10cXLXAcuqyymWtC3cvI8rUHZxAiHsMSes",
+                    'Origin': "http://localhost:3000",
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                  },
+            }).then(response => response.json())
+            .then(data => 
+                {
+                    shippingCustomers = data.payload.list.clients;
+
+                    shippingCustomers.forEach((cust) => {
+                        cust.type = "Shipping"
+                        customerArray.push(cust);
+                    })
+
+                    productCustomers.forEach((cust) => {
+                        cust.type = "Product"
+                        customerArray.push(cust);
+                    })
+
+                    console.log(customerArray);
+                    setCustomers(customerArray)
+                })
+
+        
+
+        
+
+    }, [])
+
 
     const getIcon = (i) => {
         return <FontAwesomeIcon icon={i} />
     }
     return (
         <div className="container-fluid">
+            <p></p>
             <div className="row mt-3">
                 <div className="col-md-6">
                     <h2 className="f-openSans">Customer Management</h2>
                     <p>Last updated December 2, 2021 5:30 PM</p>
-                    <div className="form-group has-search">
-                        <FontAwesomeIcon icon={faSearch} className="form-control-feedback" size="sm" />
-                        <input type="text" className="form-control rounded w-75 py-1" placeholder="Search" />
-                    </div>
+                     {/*<div className="form-group has-search">
+                   <FontAwesomeIcon icon={faSearch} className="form-control-feedback" size="sm" />
+                        <input type="text" className="form-control rounded w-75 py-1" placeholder="Search" /> 
+    </div>*/}
                     <div className="row mt-3 ">
                         <div className="col-md-6">
                             <div className="row gx-1 bg-light p-2">
@@ -72,11 +121,17 @@ const CustomerManagement = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {customersData.map((cust, index) => (
+                    {customers.map((cust, index) => (
+                        console.log(cust),
                         <tr key={index}>
-                            <td>{cust.id}</td>
-                            <td>{cust.name}</td>
-                            <td>
+                            <td>{cust._id}</td>
+                            <td>{
+                            cust.companyName === undefined ?
+                            `${cust.first_name} ${cust.last_name}`
+                            :
+                            cust.companyName
+                        }</td>
+                         <td>
                                 {/* <button className="btn btn-outline-primary rounded-pill btn-sm">
                                     {cust.type}
                                 </button> */}
@@ -91,14 +146,19 @@ const CustomerManagement = () => {
                                     </p>
                                 )}
                             </td>
-                            <td>{cust.address}</td>
-                            <td>{cust.dateAdded}</td>
-                            <td>{cust.emailAddress}</td>
-                            <td>{cust.totalSales}</td>
-                            <td>{cust.lastTransaction}</td>
-                            <td><button className="btn">
-                                <FontAwesomeIcon icon={faEllipsisV} />
-                            </button></td>
+
+                            <td>{cust.address !== undefined ?
+                                `${cust.address.barangay}, ${cust.address.municipality}, ${cust.address.province}, ${cust.address.region}`
+                                :
+                                `${cust.streetAddress}, ${cust.city}, ${cust.province}`
+                            }</td>
+                            <td>{new Date(cust.createdAt).toLocaleDateString("en-PH")}</td>
+                            <td>{ cust.emailAddress ?
+                            cust.emailAddress
+                            :
+                            cust.email 
+                        }</td>
+                            
                         </tr>
                     ))}
                 </tbody>
