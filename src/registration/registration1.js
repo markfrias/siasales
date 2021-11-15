@@ -84,9 +84,9 @@ function Registration1() {
           </Form.Group>
           </div>
 
-              <div class="r1-btn">
-                <Button href="http://localhost:3000/registration2" type="submit">Continue</Button>
-              </div>
+              <form action="/registration2" class="r1-btn">
+                <Button type="submit">Continue</Button>
+              </form>
        
           
         </div>

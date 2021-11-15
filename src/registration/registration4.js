@@ -26,9 +26,9 @@ function registration4() {
             <p>You can now Login to your Account</p>
           </div>
           
-          <div class="r4-btn">
-            <Button href="http://localhost:3000/App" variant="primary" type="submit">Go to Login</Button>
-          </div>
+          <form action="/App" class="r4-btn">
+            <Button  variant="primary" type="submit">Go to Login</Button>
+          </form>
         </div>
       </div>
     </Form>
