@@ -427,6 +427,15 @@ body {
 
 /**orderCreation5******************************************************/
 
+.success {
+    text-align: center;
+}
+
+.success .check {
+    font-size: 35px;
+    color: #0ABAB5;
+}
+
 .content5 {
     padding: 40px;
 }
@@ -624,6 +633,7 @@ body {
 }
 
 .status-dropdown Button {
+    font-weight: bold;
     color: black;
     padding: 10px 10px 10px 10px;
     background-color: #0ABAB5;

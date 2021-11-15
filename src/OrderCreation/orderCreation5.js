@@ -9,7 +9,6 @@ import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 
 function MyVerticallyCenteredModal(props) {
-    const [modalShow, setModalShow] = React.useState(false);
     const [modalShow2, setModalShow2] = React.useState(false);
     return (
       <Modal
@@ -45,6 +44,7 @@ function MyVerticallyCenteredModal(props) {
     );
   }
 
+
   function MyVerticallyCenteredModal2(props) {
     return (
       <Modal
@@ -59,16 +59,15 @@ function MyVerticallyCenteredModal(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>
-            This may take a few seconds. Please wait.
-          </p>
-          <p>
-            Please wait.
-          </p>
+            <div class="success">
+            <i class="check circle icon" text-align="center"></i>
+            <p>
+                The order has succesfully been added
+            </p>
+            </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
-          <Button href="/orderProcessing">Submit</Button>
+          <Button href="/orderProcessing">Go to Order</Button>
         </Modal.Footer>
       </Modal>
     );

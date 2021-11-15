@@ -6,10 +6,43 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
+import React from 'react';
+import Modal from 'react-bootstrap/Modal';
 
+function MyVerticallyCenteredModal(props) {
+    return (
+      <Modal
+        {...props}
+        size="sm-4"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Changing Order Status
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>
+            Are You sure you want to change order status
+          </p>
+          <p>
+            to Completed?
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={props.onHide}>Close</Button>
+          <Button href="/orderCompleted" >Change</Button>
+        </Modal.Footer>
+      </Modal>
 
+        
+    );
+  }
 
-function orderProcessing() {
+function OrderProcessing() {
+    const [modalShow, setModalShow] = React.useState(false);
+
   return (
     <div class="content5">
         <div  class="back5">
@@ -27,8 +60,12 @@ function orderProcessing() {
             <Dropdown.Toggle split variant="success" id="dropdown-split-basic" />
 
             <Dropdown.Menu>
-                <Dropdown.Item href="/orderProcessing">Processing</Dropdown.Item>
-                <Dropdown.Item href="/orderCompleted">Completed</Dropdown.Item>
+                <Dropdown.Item >Processing</Dropdown.Item>
+                <Dropdown.Item onClick={() => setModalShow(true)}>Completed</Dropdown.Item>
+                <MyVerticallyCenteredModal
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                />
                 <Dropdown.Item href="#/action-2">Rejected</Dropdown.Item>
                 <Dropdown.Item href="#/action-3">Drafting</Dropdown.Item>
             </Dropdown.Menu>
@@ -259,4 +296,4 @@ function orderProcessing() {
   );
 }
 
-export default orderProcessing;
+export default OrderProcessing;
