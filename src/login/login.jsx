@@ -27,7 +27,7 @@ class Login extends Component {
                       <FormControl type="password" placeholder="Password" />
                     </FormGroup>
                     <FormGroup className="mb-3" controlId="formBasicCheckbox">
-                      <FormCheck type="checkbox" label="Check me out" />
+                      <FormCheck type="checkbox" label="Remember Me" />
                     </FormGroup>
                     <Button variant="primary" type="submit">
                       Login
