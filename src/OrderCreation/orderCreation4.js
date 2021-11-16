@@ -5,10 +5,81 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
+import React from 'react';
+import Modal from 'react-bootstrap/Modal';
 
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="sm-6"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Add New Item
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <div class="modal-4">
+          <div class="modal-left">
+            
+              <Form.Group className="mb-3" controlId="ItemNo">
+                  <Form.Label><h4>Item Number:</h4></Form.Label>
+                  <Form.Control type="number" />
+              </Form.Group>
+              <h4>
+                Item Name:
+              </h4>
+              <a>
+                Toyota Corolla 2021
+              </a>
 
+              <h4>
+                Item Description:
+              </h4>
+              <a>
+                Toyota Corolla 2021 Black Automatic Transmission
+              </a>
 
-function orderCreation4() {
+              <h4>
+                Unit Price:
+              </h4>
+              <a>
+                Php. 1,000,000.00
+              </a>
+            
+          </div>
+
+          <div class="modal-right">
+            
+              <Form.Group className="mb-3" controlId="Quantity">
+                  <Form.Label ><h4>Quantity:</h4></Form.Label>
+                  <Form.Control type="number" />
+              </Form.Group>
+
+              <h4>
+                Unit Price:
+              </h4>
+              <a>
+                Php. 1,000,000.00
+              </a>
+            
+          </div>
+        </div>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide} >Add</Button>
+      </Modal.Footer>
+    </Modal>
+
+      
+  );
+}
+
+function OrderCreation4() {
+  const [modalShow, setModalShow] = React.useState(false);
   return (
     <div class="content4">
         <div class="back4">
@@ -34,7 +105,11 @@ function orderCreation4() {
         <div class="item4">
           <h4>Items to Order</h4>
           <div class="item-btn4">
-            <Button variant="primary">Add New Item</Button>
+            <Button variant="primary" onClick={() => setModalShow(true)}>Add New Item</Button>
+                <MyVerticallyCenteredModal
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                />
           </div>
         </div>
 
@@ -154,4 +229,4 @@ function orderCreation4() {
   );
 }
 
-export default orderCreation4;
+export default OrderCreation4;

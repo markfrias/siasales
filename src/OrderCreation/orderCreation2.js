@@ -38,12 +38,12 @@ function orderCreation2() {
                 <div class="address2">
                     <Form.Group className="mb-3" controlId="customerID">
                       <Form.Label>ID</Form.Label>
-                      <Form.Control type="number" placeholder="enter ID" />
+                      <Form.Control type="number" placeholder="Enter ID" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="customerName">
                       <Form.Label>Name</Form.Label>
-                      <Form.Control type="text" placeholder="enter Name" />
+                      <Form.Control type="text" placeholder="Enter Name" />
                     </Form.Group>
                 </div>
 
@@ -76,17 +76,17 @@ function orderCreation2() {
                 <div class="contact2">
                       <Form.Group className="mb-3" controlId="contactNumber">
                           <Form.Label>Contact Number</Form.Label>
-                          <Form.Control type="number" placeholder="enter Contact Number" />
+                          <Form.Control type="number" placeholder="Enter Contact Number" />
                       </Form.Group>
 
                       <Form.Group className="mb-3" controlId="formBasicEmail">
                           <Form.Label>Email address</Form.Label>
-                          <Form.Control type="email" placeholder="enter email" />
+                          <Form.Control type="email" placeholder="Enter email" />
                       </Form.Group>
 
                       <Form.Group className="mb-3" controlId="personToAlert">
                           <Form.Label>Person/Dept. to alert</Form.Label>
-                          <Form.Control type="text" placeholder="enter name or dept." />
+                          <Form.Control type="text" placeholder="Enter name or dept." />
                       </Form.Group>
 
                 </div>

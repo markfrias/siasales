@@ -68,11 +68,11 @@ function orderCreation1() {
                         <div class="address1">
                                 <Form.Group className="mb-3" controlId="customerID">
                                     <Form.Label>Customer ID</Form.Label>
-                                    <Form.Control type="number" placeholder="enter Customer ID" />
+                                    <Form.Control type="number" placeholder="Enter Customer ID" />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="customerName">
                                     <Form.Label>Customer Name</Form.Label>
-                                    <Form.Control type="text" placeholder=" enter Customer Name" />
+                                    <Form.Control type="text" placeholder=" Enter Customer Name" />
                                 </Form.Group>
                         </div>
 
@@ -106,12 +106,12 @@ function orderCreation1() {
                         <div class="contact1">
                                 <Form.Group className="mb-3" controlId="contactNumber">
                                     <Form.Label>Contact Number</Form.Label>
-                                    <Form.Control type="number" placeholder="enter Contact Number" />
+                                    <Form.Control type="number" placeholder="Enter Contact Number" />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Email address</Form.Label>
-                                    <Form.Control type="email" placeholder="enter email" />
+                                    <Form.Control type="email" placeholder="Enter email" />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="pointOfContact">
