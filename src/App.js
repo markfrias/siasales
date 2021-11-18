@@ -7,7 +7,8 @@ import Registration3 from './registration/registration3'
 import Registration4 from './registration/registration4'
 import SideMenu from './components/SideMenu';
 import CustomerManagement from './components/CustomerManagement';
-
+import Sales from './components/Sales';
+import SalesGraph from './components/SalesGraph';
 import OrderCreation1 from './OrderCreation/orderCreation1'
 import OrderCreation2 from './OrderCreation/orderCreation2'
 import OrderCreation3 from './OrderCreation/orderCreation3'
@@ -45,6 +46,12 @@ function App() {
             </Link>
             <Link to="/registration4">
               <li>4</li>
+            </Link>
+            <Link to="/SalesGraph">
+              <li>SalesGraph</li>
+            </Link>
+            <Link to="/SalesGraph">
+              <li>Sales</li>
             </Link>
 
             <Link to="/orderCreation1">
@@ -100,6 +107,8 @@ function App() {
 
           <Route path="/login" component={Login}/>
           <Route path="/customers" component={CustomerManagement} />
+          <Route path="/SalesGraph" component={SalesGraph} />
+          <Route path="/Sales" component={Sales} />
         </Switch>
       
     </Router>
