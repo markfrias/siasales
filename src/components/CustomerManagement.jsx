@@ -36,9 +36,12 @@ const CustomerManagement = () => {
     useEffect(() => {
         let productCustomers, shippingCustomers;
         let customerArray = [];
+        
+        
         fetch('http://localhost:8000/customers/')
             .then(response => response.json())
             .then(data => productCustomers = data)
+            .catch(err => productCustomers = {})
 
             fetch('https://api-cloud-shipping.klylylydeee.xyz/analytics/users', {
                 headers: {
@@ -58,14 +61,19 @@ const CustomerManagement = () => {
                         customerArray.push(cust);
                     })
 
-                    productCustomers.forEach((cust) => {
-                        cust.type = "Product"
-                        customerArray.push(cust);
-                    })
+                    try {
+                        productCustomers.forEach((cust) => {
+                            cust.type = "Product"
+                            customerArray.push(cust);
+                        })
+                    } catch(error) {
+                        
+                    }
+                    
 
                     console.log(customerArray);
                     setCustomers(customerArray)
-                })
+        })
 
         
 
