@@ -1,7 +1,50 @@
 .login-container {
     display: flex;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.left-login, .right-login {
-    width: 50%;
+.left-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 1000px;
+    padding: 0 2.5rem;
 }
+
+.right-login {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero {
+    background-image: url("../registration/images/sale.jpg");
+    height: 100%;
+    width: 100%;
+}
+
+.title-class {
+    height: 60%;
+    background: #0ABAB5;
+}
+
+form {
+    width: 100%;
+}
+
+img {
+    width: 100%;
+}
+
+.brand, .brand2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+}
+
