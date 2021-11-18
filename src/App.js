@@ -15,6 +15,9 @@ import OrderCreation4 from './OrderCreation/orderCreation4'
 import OrderCreation5 from './OrderCreation/orderCreation5'
 import OrderProcessing from './OrderCreation/orderProcessing'
 import OrderCompleted from './OrderCreation/orderCompleted'
+import OrderRejected from './OrderCreation/orderRejected'
+import OrderDrafting from './OrderCreation/orderDrafting'
+
 
 import {
   BrowserRouter as Router,
@@ -65,6 +68,12 @@ function App() {
             <Link to="/orderCompleted">
               <li>orderCompleted</li>
             </Link>
+            <Link to="/orderRejected">
+              <li>orderRejected</li>
+            </Link>
+            <Link to="/orderDrafting">
+              <li>orderDrafting</li>
+            </Link>
 
             <Link to="/login">
               <li>4</li>
@@ -86,6 +95,8 @@ function App() {
           <Route path="/orderCreation5" component={OrderCreation5} />
           <Route path="/orderProcessing" component={OrderProcessing} />
           <Route path="/orderCompleted" component={OrderCompleted} />
+          <Route path="/orderRejected" component={OrderRejected} />
+          <Route path="/orderDrafting" component={OrderDrafting} />
 
           <Route path="/login" component={Login}/>
           <Route path="/customers" component={CustomerManagement} />

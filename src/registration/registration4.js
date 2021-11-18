@@ -9,26 +9,34 @@ function registration4() {
   return (
     <Form>
       <div class="row">
-        <div class="image">
-            <div class="r4-text">
-              <h1>wilbur</h1>
-              <p>Sales Information System</p>
+        <div class="title-image">
+          <div class="title">
+              <div class="r4-text">
+                <h1>wilbur</h1>
+                <p>Sales Information System</p>
+              </div>
             </div>
-        </div>
 
-        <div class="r4-register">
-          <div >
-        <ProgressBar animated class="r4-progress" now={100} />
+              <div class="image">
+
+            </div>
           </div>
 
-          <div class="r4-account">
-            <h1>Account Creation Successful</h1>
-            <p>You can now Login to your Account</p>
+        <div class="register">
+          <div class="r4-register">
+            <div >
+          <ProgressBar animated class="r4-progress" now={100} />
+            </div>
+
+            <div class="r4-account">
+              <h1>Account Creation Successful</h1>
+              <p>You can now Login to your Account</p>
+            </div>
+            
+            <form action="/App" class="r4-btn">
+              <Button  variant="primary" type="submit">Go to Login</Button>
+            </form>
           </div>
-          
-          <form action="/App" class="r4-btn">
-            <Button  variant="primary" type="submit">Go to Login</Button>
-          </form>
         </div>
       </div>
     </Form>
