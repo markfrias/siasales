@@ -13,20 +13,20 @@ function orderCreation4() {
     <div class="content4">
         <div class="back4">
             <i class="angle left icon"></i>
-            <Button variant="link" href="/App">Back to sales Order</Button>
+            <Button variant="link">Back to sales Order</Button>
         </div>
         <div class="title4">
             <h1>Create a new sales order</h1>
         </div>
 
         <div class="nav-row4">
-            <a href="/orderCreation1">Customer Information</a>
-            <a href="/orderCreation2">Billing</a>
-            <a href="/orderCreation3">Shipping</a>
+            <p >Customer Information</p>
+            <p >Billing</p>
+            <p >Shipping</p>
 
-            <a class="pay4">Contents</a>
+            <p class="pay4">Contents</p>
 
-            <a href="/orderCreation5">Summary</a>
+            <p>Summary</p>
         </div>
 
         <ProgressBar animated now={80} />
@@ -144,9 +144,9 @@ function orderCreation4() {
           </div>
 
         </div>
-            <form action="/orderCreation5" class="btn4">
+            <div class="btn4">
                 <Button type="submit">Next</Button>
-            </form>
+            </div>
       
 
     </div>  

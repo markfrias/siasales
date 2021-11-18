@@ -18,7 +18,6 @@ body {
 .back1 .angle {
     font-size: 2em;
     padding: 0px;
-    cursor: pointer;
 }
 
 .title1 h1{
@@ -32,11 +31,9 @@ body {
     padding-bottom: 20px;
 }
 
-.nav-row1 a{
-    color: black;
+.nav-row1 p{
     padding: 15px;
     margin: 0%;
-    cursor: pointer;
 }
 
 .nav-row1 .cust-info1 {
@@ -114,7 +111,6 @@ body {
 }
 
 .btn1 Button{
-    border: 0;
     border-radius: 10px;
     padding: 3px 50px 3px 50px;
     font-size: 18px;
@@ -151,11 +147,9 @@ body {
     padding-bottom: 20px;
 }
 
-.nav-row2 a{
-    color: black;
+.nav-row2 p{
     padding: 15px;
     margin: 0%;
-    cursor: pointer;
 }
 
 .nav-row2 .bill2 {
@@ -206,7 +200,6 @@ body {
 }
 
 .btn2 Button{
-    border: 0;
     border-radius: 10px;
     padding: 3px 50px 3px 50px;
     font-size: 18px;
@@ -242,11 +235,9 @@ body {
     padding-bottom: 20px;
 }
 
-.nav-row3 a{
-    color: black;
+.nav-row3 p{
     padding: 15px;
     margin: 0%;
-    cursor: pointer;
 }
 
 .nav-row3 .ship3 {
@@ -308,7 +299,6 @@ body {
 }
 
 .btn3 Button{
-    border: 0;
     border-radius: 10px;
     padding: 3px 50px 3px 50px;
     font-size: 18px;
@@ -344,11 +334,9 @@ body {
     padding-bottom: 20px;
 }
 
-.nav-row4 a{
-    color: black;
+.nav-row4 p{
     padding: 15px;
     margin: 0%;
-    cursor: pointer;
 }
 
 .nav-row4 .pay4 {
@@ -416,7 +404,6 @@ body {
 }
 
 .btn4 Button{
-    border: 0;
     border-radius: 10px;
     padding: 3px 50px 3px 50px;
     font-size: 18px;
@@ -426,15 +413,6 @@ body {
 }
 
 /**orderCreation5******************************************************/
-
-.success {
-    text-align: center;
-}
-
-.success .check {
-    font-size: 35px;
-    color: #0ABAB5;
-}
 
 .content5 {
     padding: 40px;
@@ -461,11 +439,9 @@ body {
     padding-bottom: 20px;
 }
 
-.nav-row5 a{
-    color: black;
+.nav-row5 p{
     padding: 15px;
     margin: 0%;
-    cursor: pointer;
 }
 
 .nav-row5 .cont5 {
@@ -608,38 +584,10 @@ body {
 }
 
 .btn5 Button{
-    border: 0;
     border-radius: 10px;
     padding: 3px 50px 3px 50px;
     font-size: 18px;
     background-color: #0ABAB5;
     font-weight: bold;
     align-items: flex-end;
-    
 }
-
-/**order-Status******************************************************/
-
-.title-status h1{
-    font-size: 24;
-    font-weight: bold;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    padding: 30px 0px 30px 0px;
-
-}
-
-.status-dropdown {
-    padding: 0px 0px 30px 0px;
-}
-
-.status-dropdown Button {
-    font-weight: bold;
-    color: black;
-    padding: 10px 10px 10px 10px;
-    background-color: #0ABAB5;
-    border: 0;
-    border-radius: 5px;
-}
-
-/**orderCreation5******************************************************/
-

@@ -5,96 +5,27 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
-import React from 'react';
-import Modal from 'react-bootstrap/Modal';
-
-function MyVerticallyCenteredModal(props) {
-    const [modalShow2, setModalShow2] = React.useState(false);
-    return (
-      <Modal
-        {...props}
-        size="sm-4"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Submitting Sales Order
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <p>
-            Some item/s ordered are no longer in stock.
-          </p>
-          <p>
-            Are you sure you want to submit this sales order?
-          </p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
-          <Button onClick={() => setModalShow2(true)} >Submit</Button>
-        </Modal.Footer>
-            <MyVerticallyCenteredModal2 
-                    show={modalShow2}
-                    onHide={() => setModalShow2(false)}
-            />
-      </Modal>
-
-        
-    );
-  }
 
 
-  function MyVerticallyCenteredModal2(props) {
-    return (
-      <Modal
-        {...props}
-        size="sm-4"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Submitting Sales Order
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-            <div class="success">
-            <i class="check circle icon" text-align="center"></i>
-            <p>
-                The order has succesfully been added
-            </p>
-            </div>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button href="/orderProcessing">Go to Order</Button>
-        </Modal.Footer>
-      </Modal>
-    );
-  }
 
-function OrderCreation5() {
-    const [modalShow, setModalShow] = React.useState(false);
-    const [modalShow2, setModalShow2] = React.useState(false);
-    
-    
+function orderCreation5() {
   return (
     <div class="content5">
         <div class="back5">
             <i class="angle left icon"></i>
-            <Button variant="link" href="/App">Back to sales Order</Button>
+            <Button variant="link">Back to sales Order</Button>
         </div>
         <div class="title5">
             <h1>Create a new sales order</h1>
         </div>
 
         <div class="nav-row5">
-            <a href="/orderCreation1">Customer Information</a>
-            <a href="/orderCreation2">Billing</a>
-            <a href="/orderCreation3">Shipping</a>
-            <a href="/orderCreation4">Contents</a>
+            <p >Customer Information</p>
+            <p >Billing</p>
+            <p >Shipping</p>
+            <p >Contents</p>
 
-            <a class="cont5">Summary</a>
+            <p class="cont5">Summary</p>
         </div>
 
         <ProgressBar animated now={100} />
@@ -325,24 +256,13 @@ function OrderCreation5() {
 
         </div>
 
-            <form class="btn5">
-                <Button variant="primary" onClick={() => setModalShow(true)}>
-                    Submit
-                </Button>
-
-                <MyVerticallyCenteredModal
-                    show={modalShow}
-                    onHide={() => setModalShow(false)}
-                />
-                <MyVerticallyCenteredModal2 
-                    show={modalShow2}
-                    onHide={() => setModalShow2(false)}
-                />
-            </form>
+            <div class="btn5">
+                <Button type="submit">Submit</Button>
+            </div>
 
     </div>  
 
   );
 }
 
-export default OrderCreation5;
+export default orderCreation5;
