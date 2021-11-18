@@ -79,12 +79,12 @@ function Registration3() {
           </div>
 
           <div class="r3-btn">
-            <div class="back">
-              <Button href="http://localhost:3000/registration2" variant="outline-primary">Back</Button>
-            </div>
-            <div class="continue">
-              <Button href="http://localhost:3000/registration4" variant="primary" type="submit">Continue</Button>
-            </div>
+            <form action="/registration2" class="back">
+              <Button  variant="outline-primary" type="submit">Back</Button>
+            </form>
+            <form action="/registration4" class="continue">
+              <Button  variant="primary" type="submit">Continue</Button>
+            </form>
           </div>
 
         </div>

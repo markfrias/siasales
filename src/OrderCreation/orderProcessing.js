@@ -1,7 +1,8 @@
 import './orderCreation.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'semantic-ui-css/semantic.min.css'
-import ProgressBar from 'react-bootstrap/ProgressBar';
+import Dropdown from 'react-bootstrap/Dropdown';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
@@ -9,7 +10,6 @@ import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 
 function MyVerticallyCenteredModal(props) {
-    const [modalShow2, setModalShow2] = React.useState(false);
     return (
       <Modal
         {...props}
@@ -19,91 +19,57 @@ function MyVerticallyCenteredModal(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Submitting Sales Order
+            Changing Order Status
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <p>
-            Some item/s ordered are no longer in stock.
+            Are You sure you want to change order status
           </p>
           <p>
-            Are you sure you want to submit this sales order?
+            to Completed?
           </p>
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.onHide}>Close</Button>
-          <Button onClick={() => setModalShow2(true)} >Submit</Button>
+          <Button href="/orderCompleted" >Change</Button>
         </Modal.Footer>
-            <MyVerticallyCenteredModal2 
-                    show={modalShow2}
-                    onHide={() => setModalShow2(false)}
-            />
       </Modal>
 
         
     );
   }
 
-
-  function MyVerticallyCenteredModal2(props) {
-    return (
-      <Modal
-        {...props}
-        size="sm-4"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Submitting Sales Order
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-            <div class="success">
-            <i class="check circle icon" text-align="center"></i>
-            <p>
-                The order has succesfully been added
-            </p>
-            </div>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button href="/orderProcessing">Go to Order</Button>
-        </Modal.Footer>
-      </Modal>
-    );
-  }
-
-function OrderCreation5() {
+function OrderProcessing() {
     const [modalShow, setModalShow] = React.useState(false);
-    const [modalShow2, setModalShow2] = React.useState(false);
-    
-    
+
   return (
     <div class="content5">
-        <div class="back5">
+        <div  class="back5">
             <i class="angle left icon"></i>
             <Button variant="link" href="/App">Back to sales Order</Button>
         </div>
-        <div class="title5">
-            <h1>Create a new sales order</h1>
+        <div class="title-status">
+            <h1>Sales Order 0123455689</h1>
         </div>
 
-        <div class="nav-row5">
-            <a href="/orderCreation1">Customer Information</a>
-            <a href="/orderCreation2">Billing</a>
-            <a href="/orderCreation3">Shipping</a>
-            <a href="/orderCreation4">Contents</a>
+        <div class="status-dropdown">
+            <Dropdown as={ButtonGroup}>
+            <Button variant="success">Status: Processing</Button>
 
-            <a class="cont5">Summary</a>
-        </div>
+            <Dropdown.Toggle split variant="success" id="dropdown-split-basic" />
 
-        <ProgressBar animated now={100} />
-
-        <div class="note5">
-            <div class="warning5">
-                <i class="info circle icon"></i>
-                <>Please review the data below. Go back to the previous steps is there are missing data.</>
-            </div>
+            <Dropdown.Menu>
+                <Dropdown.Item >Processing</Dropdown.Item>
+                <Dropdown.Item onClick={() => setModalShow(true)}>Completed</Dropdown.Item>
+                <MyVerticallyCenteredModal
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                />
+                <Dropdown.Item href="#/action-2">Rejected</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Drafting</Dropdown.Item>
+            </Dropdown.Menu>
+            </Dropdown>
         </div>
 
         <div class="date-filing5">
@@ -325,24 +291,9 @@ function OrderCreation5() {
 
         </div>
 
-            <form class="btn5">
-                <Button variant="primary" onClick={() => setModalShow(true)}>
-                    Submit
-                </Button>
-
-                <MyVerticallyCenteredModal
-                    show={modalShow}
-                    onHide={() => setModalShow(false)}
-                />
-                <MyVerticallyCenteredModal2 
-                    show={modalShow2}
-                    onHide={() => setModalShow2(false)}
-                />
-            </form>
-
     </div>  
 
   );
 }
 
-export default OrderCreation5;
+export default OrderProcessing;
