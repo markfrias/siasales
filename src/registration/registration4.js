@@ -3,12 +3,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import ProgressBar from 'react-bootstrap/ProgressBar';
+import LinkButton from '../components/LinkButton';
 
 
 function registration4() {
   return (
     <Form>
-      <div class="row">
+      <div class="row pageContainer">
         <div class="title-image">
           <div class="title">
               <div class="r4-text">
@@ -33,8 +34,8 @@ function registration4() {
               <p>You can now Login to your Account</p>
             </div>
             
-            <form action="/App" class="r4-btn">
-              <Button  variant="primary" type="submit">Go to Login</Button>
+            <form action="/App" class="button-group">
+            <LinkButton link="Login" label="Go to login"></LinkButton>
             </form>
           </div>
         </div>

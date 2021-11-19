@@ -6,7 +6,14 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import InputGroup from 'react-bootstrap/Form';
 import setValidated  from 'react-bootstrap/Form';
 import validated from 'react-bootstrap/Form';
+import LinkButton from '../components/LinkButton';
 import React, {useState} from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 
@@ -27,7 +34,7 @@ function Registration1() {
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
 
-      <div class="row">
+      <div class="row pageContainer">
         <div class="title-image">
           <div class="title">
               <div class="r1-text">
@@ -46,12 +53,12 @@ function Registration1() {
               <ProgressBar animated class="r1-progress" now={30} />
             </div>
             <div class="r1-account">
-              <h1>Create Your Account</h1>
-              <Button href="http://localhost:3000/App" variant="link">Already have an Account? Sign-in here instead</Button>
+              <h1>Create your account</h1>
+              <Link to="Login">Already have an account? Sign in here instead.</Link>
             </div>
 
           <div class="r1-username">
-            <Form.Group  controlId="formBasicEmail">
+            <Form.Group  controlId="formBasicEmail" className="inputLabel">
             <Form.Label>Username</Form.Label>
             <InputGroup hasValidation>
               <Form.Control
@@ -69,7 +76,7 @@ function Registration1() {
 
           <div class="r1-password">
           <Form.Group  controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
+            <Form.Label className="formLabel">Password</Form.Label>
             <InputGroup hasValidation>
               <Form.Control
                 type="password"
@@ -84,14 +91,15 @@ function Registration1() {
           </Form.Group>
           </div>
           
-              <div class="r1-checkbox">
+              {/*<div class="r1-checkbox">
             <Form.Group controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="Remember Me" />
             </Form.Group>
             </div>
+            */} 
 
-                <form action="/registration2" class="r1-btn">
-                  <Button type="submit">Continue</Button>
+                <form action="/registration2" className="button-group">
+                <LinkButton link="registration2" label="Continue"></LinkButton>
                 </form>
         
             

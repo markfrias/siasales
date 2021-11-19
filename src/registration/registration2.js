@@ -6,6 +6,17 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import setValidated  from 'react-bootstrap/Form';
 import validated from 'react-bootstrap/Form';
 import React, {useState} from 'react';
+import LinkButton from '../components/LinkButton';
+import { useHistory } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+
+
 
 
 function Registration2() {
@@ -21,11 +32,12 @@ function Registration2() {
 
     setValidated(true);
   };
+  
 
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
 
-      <div class="row">
+      <div class="row pageContainer">
         <div class="title-image">
           <div class="title">
               <div class="r2-text">
@@ -45,8 +57,9 @@ function Registration2() {
             </div>
             <div class="r2-account">
               <h1>Create Your Account</h1>
-              <p>We need more contact information</p>
-              <p>To assist you better in the future</p>
+              <p className="reg-note">We need more contact information
+                to assist you better in the future.
+              </p>
             </div>
 
               <div class="r2-firstname">
@@ -81,16 +94,16 @@ function Registration2() {
 
               <div class="r2-btnLink" >
                   <Form.Group className="mb-3">
-                      <Button href="http://localhost:3000/App" variant="link">Already have an Account? Sign-in here instead</Button>
+                  <Link to="Login">Already have an account? Sign in here instead.</Link>
                   </Form.Group>
             </div>
 
             <div class="r2-btn">
               <form action="/registration1" class="back">
-                <Button  variant="outline-primary" type="submit">Back</Button>
+               <LinkButton link="registration1" label="Back" variant="outline"></LinkButton>
               </form>
               <form action="/registration3" class="continue">
-                <Button  variant="primary" type="submit">Continue</Button>
+               <LinkButton link="registration3" label="Continue"></LinkButton>
               </form>
             </div>
 
@@ -101,5 +114,24 @@ function Registration2() {
 
   );
 }
+
+function BackButton() {
+  const history = useHistory();
+
+  function handleClick(path) {
+    history.push(path);
+  }
+
+  return (
+    <Button
+      variant="primary"
+      onClick={() => handleClick("registration1")}
+      >
+      </Button>
+
+  )
+}
+
+
 
 export default Registration2;

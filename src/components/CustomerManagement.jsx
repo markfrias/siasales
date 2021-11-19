@@ -74,6 +74,7 @@ const CustomerManagement = () => {
                     console.log(customerArray);
                     setCustomers(customerArray)
         })
+        .catch (error => console.log(error))
 
         
 
