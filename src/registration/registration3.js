@@ -6,6 +6,13 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import setValidated  from 'react-bootstrap/Form';
 import validated from 'react-bootstrap/Form';
 import React, {useState} from 'react';
+import LinkButton from '../components/LinkButton';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 function Registration3() {
@@ -24,7 +31,7 @@ function Registration3() {
 
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
-      <div class="row">
+      <div class="row pageContainer">
         <div class="title-image">
             <div class="title">
               <div class="r3-text">
@@ -82,16 +89,16 @@ function Registration3() {
 
             <div class="r3-btnLink">
                   <Form.Group >
-                      <Button href="http://localhost:3000/App" variant="link">Already have an Account? Sign-in here instead</Button>
+                  <Link to="Login">Already have an account? Sign in here instead.</Link>
                   </Form.Group>
             </div>
 
             <div class="r3-btn">
-              <form action="/registration2" class="back">
-                <Button  variant="outline-primary" type="submit">Back</Button>
+              <form action="/registration1" class="back">
+               <LinkButton link="registration2" label="Back" variant="outline"></LinkButton>
               </form>
-              <form action="/registration4" class="continue">
-                <Button  variant="primary" type="submit">Continue</Button>
+              <form action="/registration3" class="continue">
+               <LinkButton link="registration4" label="Continue"></LinkButton>
               </form>
             </div>
 

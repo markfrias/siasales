@@ -9,15 +9,19 @@ body {
     max-width: 100%;
 }
 
+.pageContainer {
+    height: 100vh;
+}
+
 .title-image {
     display: flex;
     flex-direction: column;
     width: 40%;
     background-image: url("./images/sale.jpg");
     padding: 0;
-    background-size: 100% 60%;
+    background-size: auto;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: 25%;
 }
 
 .title {
@@ -78,6 +82,12 @@ body {
     color: #fff;
     background-color: #0A67BA;
     border-color: #0A67BA;
+}
+
+/* Styling for form labels */
+.form-label {
+    font-weight: bold;
+    color: rgba(0, 0, 0, .8)
 }
 
 
@@ -237,3 +247,26 @@ body {
     border-color: #0A67BA;
 }
 
+
+/* Styling for buttons -- transfer to assets later */
+.btn-primary {
+    background-color: #0A67BACC;
+    border-color: #0A67BACC;
+    font-weight: bold;
+    color: black;
+    border-radius: 5px;
+}
+
+.button-group {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+
+/* Styling for registration parts */
+.reg-note {
+    font-size: 1.25rem;
+    color: #000000CC;
+    width: 25rem;
+}
