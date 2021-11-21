@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, ResponsiveContainer } from 'recharts'
 
@@ -18,6 +18,27 @@ const SalesGraph = () => {
         { month: "November", cost: 60 },
         { month: "December", cost: 40 },
     ];
+
+    const [chartData, setChartData] = useState({});
+
+    useEffect(() => {
+        fetch('https://api-cloud-shipping.klylylydeee.xyz/analytics/transactions/cost/monthly?year=2021', {
+        headers: {
+            'TPSRole': "salesIntegration",
+            'TPSAuthenticate': "Handler eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbnRlZ3JhdGlvbl9wYXJ0bmVyIjoiZDcxOTE3ZjctZWRiZC00MjFjLThlZTAtMjhjODc0OGI5NDNlIiwiaWF0IjoxNjMyNTQ0NDI4fQ.kbOpoIdeW10cXLXAcuqyymWtC3cvI8rUHZxAiHsMSes",
+            'Origin': "http://localhost:3000",
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          }
+        }
+        )
+        .then (response => response.json())
+        .then(data => setChartData(data.payload.transactions))
+        .catch(error => console.log("Error"))
+    }, [])
+
+    console.log(chartData)
+
 
     return (
         <div className="py-2 px-4">
@@ -44,11 +65,11 @@ const SalesGraph = () => {
                 </div>
                 <div className="p-3 bg-light">
                     <ResponsiveContainer width="100%" height={300}>
-                        <LineChart width="100%" height={300} data={data}>
-                            <Line dataKey="cost" stroke="#109e00" />
+                        <LineChart width="100%" height={300} data={chartData}>
+                            <Line dataKey="total" stroke="#109e00" />
                             <CartesianGrid stroke="#ccc" />
                             <XAxis dataKey="month" />
-                            <YAxis dataKey="cost" />
+                            <YAxis dataKey="total" />
                         </LineChart>
                     </ResponsiveContainer>
                 </div>

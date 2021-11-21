@@ -71,7 +71,6 @@ const CustomerManagement = () => {
                     }
                     
 
-                    console.log(customerArray);
                     setCustomers(customerArray)
         })
         .catch (error => console.log(error))
@@ -131,7 +130,6 @@ const CustomerManagement = () => {
                 </thead>
                 <tbody>
                     {customers.map((cust, index) => (
-                        console.log(cust),
                         <tr key={index}>
                             <td>{cust._id}</td>
                             <td>{
