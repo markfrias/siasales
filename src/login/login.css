@@ -10,7 +10,7 @@
     flex-direction: column;
     justify-content: center;
     width: 1000px;
-    padding: 0 2.5rem;
+    padding: 0 5.5rem;
 }
 
 .right-login {
@@ -48,3 +48,8 @@ img {
     font-family: 'Comfortaa', cursive;
 }
 
+.btn1 {
+    width: 100%;
+    text-align: center;
+    
+}
