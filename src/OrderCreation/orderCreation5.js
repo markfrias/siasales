@@ -23,12 +23,14 @@ function MyVerticallyCenteredModal(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>
-            Some item/s ordered are no longer in stock.
-          </p>
-          <p>
-            Are you sure you want to submit this sales order?
-          </p>
+            <div class="submit-order">
+                <p>
+                    Some item/s ordered are no longer in stock.
+                </p>
+                <p>
+                    Are you sure you want to submit this sales order?
+                </p>
+          </div>
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.onHide}>Close</Button>
@@ -59,11 +61,13 @@ function MyVerticallyCenteredModal(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <div class="success">
-            <i class="check circle icon" text-align="center"></i>
-            <p>
-                The order has succesfully been added
-            </p>
+            <div class="submit-success">
+                <div class="success">
+                    <i class="check circle icon" text-align="center"></i>
+                    <p>
+                        The order has succesfully been added
+                    </p>
+                </div>
             </div>
         </Modal.Body>
         <Modal.Footer>

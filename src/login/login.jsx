@@ -13,7 +13,8 @@ class Login extends Component {
               <div className="left-login">
                   
                   <h1>Login</h1>
-                  <p className="mb-4">Start working and getting things done.</p>
+                  <p>Start working and getting things done.</p>
+                  
                   <Form>
                     <FormGroup className="mb-3" controlId="formBasicEmail">
                       <FormLabel>Email address or Username</FormLabel>

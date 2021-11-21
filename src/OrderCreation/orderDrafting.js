@@ -6,148 +6,35 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
-import React from 'react';
-import Modal from 'react-bootstrap/Modal';
 
-function MyVerticallyCenteredModal(props) {
-    return (
-      <Modal
-        {...props}
-        size="sm-4"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Changing Order Status
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <p>
-            Are You sure you want to change order status
-          </p>
-          <p>
-            to Completed?
-          </p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
-          <Button href="/orderCompleted" >Change</Button>
-        </Modal.Footer>
-      </Modal>
 
-        
-    );
-  }
 
-  function MyVerticallyCenteredModal1(props) {
-    return (
-      <Modal
-        {...props}
-        size="sm-4"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Changing Order Status
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <p>
-            Are You sure you want to change order status
-          </p>
-          <p>
-            to Rejected?
-          </p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
-          <Button href="/orderRejected" >Change</Button>
-        </Modal.Footer>
-      </Modal>
-
-        
-    );
-  }
-
-  function MyVerticallyCenteredModal2(props) {
-    return (
-      <Modal
-        {...props}
-        size="sm-4"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Changing Order Status
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <p>
-            Are You sure you want to change order status
-          </p>
-          <p>
-            to Drafting?
-          </p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
-          <Button href="/orderDrafting" >Change</Button>
-        </Modal.Footer>
-      </Modal>
-
-        
-    );
-  }
-
-function OrderProcessing() {
-    const [modalShow, setModalShow] = React.useState(false);
-    const [modalShow1, setModalShow1] = React.useState(false);
-    const [modalShow2, setModalShow2] = React.useState(false);
-
+function orderDrafting() {
   return (
     <div class="content5">
-        <div  class="back5">
+        <div class="back5">
             <i class="angle left icon"></i>
             <Button variant="link" href="/App">Back to sales Order</Button>
         </div>
         <div class="title-status">
             <h1>Sales Order 0123455689</h1>
         </div>
-
+        
         <div class="status-dropdown">
             <Dropdown as={ButtonGroup}>
-            <Button variant="success">Status: Processing</Button>
+            <Button variant="success">Status: Drafting</Button>
 
             <Dropdown.Toggle split variant="success" id="dropdown-split-basic" />
 
             <Dropdown.Menu>
-                <Dropdown.Item >Processing</Dropdown.Item>
-
-                <Dropdown.Item onClick={() => setModalShow(true)}>Completed</Dropdown.Item>
-                <MyVerticallyCenteredModal
-                    show={modalShow}
-                    onHide={() => setModalShow(false)}
-                />
-
-                <Dropdown.Item onClick={() => setModalShow1(true)}>Rejected</Dropdown.Item>
-                <MyVerticallyCenteredModal1
-                    show={modalShow1}
-                    onHide={() => setModalShow1(false)}
-                />
-
-                <Dropdown.Item onClick={() => setModalShow2(true)}>Drafting</Dropdown.Item>
-                <MyVerticallyCenteredModal2
-                    show={modalShow2}
-                    onHide={() => setModalShow2(false)}
-                />
-
+                <Dropdown.Item href="/orderProcessing">Processing</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">Completed</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">Rejected</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Drafting</Dropdown.Item>
             </Dropdown.Menu>
             </Dropdown>
         </div>
-
+        
         <div class="date-filing5">
           <h2>Date of Filing: December 2, 2022</h2>
         </div>
@@ -372,4 +259,4 @@ function OrderProcessing() {
   );
 }
 
-export default OrderProcessing;
+export default orderDrafting;
