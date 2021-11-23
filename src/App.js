@@ -11,8 +11,8 @@ import Sales from './components/Sales';
 import SalesGraph from './components/SalesGraph';
 import OrderCreation1 from './OrderCreation/OrderCreation1'
 import OrderCreation2 from './OrderCreation/OrderCreation2'
-import OrderCreation3 from './OrderCreation/orderCreation3'
-import OrderCreation4 from './OrderCreation/orderCreation4'
+import OrderCreation3 from './OrderCreation/OrderCreation3'
+import OrderCreation4 from './OrderCreation/OrderCreation4'
 import OrderCreation5 from './OrderCreation/orderCreation5'
 import OrderProcessing from './OrderCreation/orderProcessing'
 import OrderCompleted from './OrderCreation/orderCompleted'

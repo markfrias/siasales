@@ -13,6 +13,9 @@ import {
   } from "react-router-dom";
 import orderCreation2 from './OrderCreation2';
 import OrderCreation2 from './OrderCreation2';
+import OrderCreation3 from './OrderCreation3';
+import OrderCreation4 from './OrderCreation4';
+import OrderCreation5 from './OrderCreation5';
 
 const OrderCreation = () => {
 
@@ -33,9 +36,9 @@ const OrderCreation = () => {
                     
                     <NavLink to={`${url}/1`}>Customer Information</NavLink>
                     <NavLink to={`${url}/2`}>Billing</NavLink>
-                    <a href="/orderCreation3">Shipping</a>
-                    <a href="/orderCreation4">Contents</a>
-                    <a href="/orderCreation5">Summary</a>
+                    <NavLink to={`${url}/3`}>Shipping</NavLink>
+                    <NavLink to={`${url}/4`}>Contents</NavLink>
+                    <NavLink to={`${url}/5`}>Summary</NavLink>
                 </div>
 
             <ProgressBar animated now={20} />
@@ -48,8 +51,20 @@ const OrderCreation = () => {
                <OrderCreation1/>
             </Route>
 
-            <Route path={`${path}/:2`}>
+            <Route path={`${path}/2`}>
                 <OrderCreation2 />
+            </Route>
+
+            <Route path={`${path}/3`}>
+                <OrderCreation3 />
+            </Route>
+            
+            <Route path={`${path}/4`}>
+                <OrderCreation4 />
+            </Route>
+
+            <Route path={`${path}/5`}>
+                <OrderCreation5 />
             </Route>
       </Switch>
 

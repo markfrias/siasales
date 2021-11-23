@@ -81,27 +81,7 @@ function MyVerticallyCenteredModal(props) {
 function OrderCreation4() {
   const [modalShow, setModalShow] = React.useState(false);
   return (
-    <div class="content4">
-        <div class="back4">
-            <i class="angle left icon"></i>
-            <Button variant="link" href="/App">Back to sales Order</Button>
-        </div>
-        <div class="title4">
-            <h1>Create a new sales order</h1>
-        </div>
-
-        <div class="nav-row4">
-            <a href="/orderCreation1">Customer Information</a>
-            <a href="/orderCreation2">Billing</a>
-            <a href="/orderCreation3">Shipping</a>
-
-            <a class="pay4">Contents</a>
-
-            <a href="/orderCreation5">Summary</a>
-        </div>
-
-        <ProgressBar animated now={80} />
-
+    <div class="content1">
         <div class="item4">
           <h4>Items to Order</h4>
           <div class="item-btn4">
