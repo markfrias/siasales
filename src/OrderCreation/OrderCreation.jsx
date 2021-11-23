@@ -11,7 +11,8 @@ import {
     Route,
     Link
   } from "react-router-dom";
-import orderCreation2 from './orderCreation2';
+import orderCreation2 from './OrderCreation2';
+import OrderCreation2 from './OrderCreation2';
 
 const OrderCreation = () => {
 
@@ -48,7 +49,7 @@ const OrderCreation = () => {
             </Route>
 
             <Route path={`${path}/:2`}>
-                <orderCreation2 />
+                <OrderCreation2 />
             </Route>
       </Switch>
 

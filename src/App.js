@@ -10,7 +10,7 @@ import CustomerManagement from './components/CustomerManagement';
 import Sales from './components/Sales';
 import SalesGraph from './components/SalesGraph';
 import OrderCreation1 from './OrderCreation/OrderCreation1'
-import OrderCreation2 from './OrderCreation/orderCreation2'
+import OrderCreation2 from './OrderCreation/OrderCreation2'
 import OrderCreation3 from './OrderCreation/orderCreation3'
 import OrderCreation4 from './OrderCreation/orderCreation4'
 import OrderCreation5 from './OrderCreation/orderCreation5'
@@ -52,12 +52,7 @@ function App() {
               <li>SalesGraph</li>
             </Link>
 
-            <Link to="/orderCreation1">
-              <li>orderCreation1</li>
-            </Link>
-            <Link to="/orderCreation2">
-              <li>orderCreation2</li>
-            </Link>
+           
             <Link to="/orderCreation3">
               <li>orderCreation3</li>
             </Link>
