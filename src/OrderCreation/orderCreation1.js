@@ -9,28 +9,12 @@ import Button from 'react-bootstrap/Button';
 
 
 
-function orderCreation1() {
-  return (
+
+function OrderCreation1() {
+
+    
+    return (
         <div class="content1">
-            <div class="back1">
-                <i class="angle left icon"></i>
-                <Button variant="link" href="/App">Back to sales Order</Button>
-            </div>
-            <div class="title1">
-                <h1>Create a new sales order</h1>
-            </div>
-                <div class="nav-row1">
-                    
-                    <a class="cust-info1">Customer Information</a>
-                    
-                    <a href="/orderCreation2">Billing</a>
-                    <a href="/orderCreation3">Shipping</a>
-                    <a href="/orderCreation4">Contents</a>
-                    <a href="/orderCreation5">Summary</a>
-                </div>
-
-            <ProgressBar animated now={20} />
-
                 <div class="note1">
                     <div class="warning1">
                         <i class="info circle icon"></i>
@@ -68,11 +52,11 @@ function orderCreation1() {
                         <div class="address1">
                                 <Form.Group className="mb-3" controlId="customerID">
                                     <Form.Label>Customer ID</Form.Label>
-                                    <Form.Control type="number" placeholder="enter Customer ID" />
+                                    <Form.Control type="number" placeholder="Enter Customer ID" />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="customerName">
                                     <Form.Label>Customer Name</Form.Label>
-                                    <Form.Control type="text" placeholder=" enter Customer Name" />
+                                    <Form.Control type="text" placeholder=" Enter Customer Name" />
                                 </Form.Group>
                         </div>
 
@@ -106,12 +90,12 @@ function orderCreation1() {
                         <div class="contact1">
                                 <Form.Group className="mb-3" controlId="contactNumber">
                                     <Form.Label>Contact Number</Form.Label>
-                                    <Form.Control type="number" placeholder="enter Contact Number" />
+                                    <Form.Control type="number" placeholder="Enter Contact Number" />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Email address</Form.Label>
-                                    <Form.Control type="email" placeholder="enter email" />
+                                    <Form.Control type="email" placeholder="Enter email" />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="pointOfContact">
@@ -140,4 +124,4 @@ function orderCreation1() {
   );
 }
 
-export default orderCreation1;
+export default OrderCreation1;

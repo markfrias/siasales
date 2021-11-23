@@ -7,28 +7,9 @@ import Button from 'react-bootstrap/Button';
 
 
 
-function orderCreation2() {
+function OrderCreation2() {
   return (
-    <div class="content2">
-        <div class="back2">
-            <i class="angle left icon"></i>
-            <Button variant="link" href="/App">Back to sales Order</Button>
-        </div>
-        <div class="title2">
-            <h1>Create a new sales order</h1>
-        </div>
-
-        <div class="nav-row2">
-            <a href="/orderCreation1">Customer Information</a>
-                    
-            <a class="bill2">Billing</a>
-
-            <a href="/orderCreation3">Shipping</a>
-            <a href="/orderCreation4">Contents</a>
-            <a href="/orderCreation5">Summary</a>
-        </div>
-
-        <ProgressBar animated now={40} />
+    <div class="content1">
 
         <div class="bill-info2">
             <div class="bill-address2">
@@ -38,12 +19,12 @@ function orderCreation2() {
                 <div class="address2">
                     <Form.Group className="mb-3" controlId="customerID">
                       <Form.Label>ID</Form.Label>
-                      <Form.Control type="number" placeholder="enter ID" />
+                      <Form.Control type="number" placeholder="Enter ID" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="customerName">
                       <Form.Label>Name</Form.Label>
-                      <Form.Control type="text" placeholder="enter Name" />
+                      <Form.Control type="text" placeholder="Enter Name" />
                     </Form.Group>
                 </div>
 
@@ -76,17 +57,17 @@ function orderCreation2() {
                 <div class="contact2">
                       <Form.Group className="mb-3" controlId="contactNumber">
                           <Form.Label>Contact Number</Form.Label>
-                          <Form.Control type="number" placeholder="enter Contact Number" />
+                          <Form.Control placeholder="Enter contact number" />
                       </Form.Group>
 
                       <Form.Group className="mb-3" controlId="formBasicEmail">
                           <Form.Label>Email address</Form.Label>
-                          <Form.Control type="email" placeholder="enter email" />
+                          <Form.Control type="email" placeholder="Enter email" />
                       </Form.Group>
 
                       <Form.Group className="mb-3" controlId="personToAlert">
                           <Form.Label>Person/Dept. to alert</Form.Label>
-                          <Form.Control type="text" placeholder="enter name or dept." />
+                          <Form.Control type="text" placeholder="Enter name or dept." />
                       </Form.Group>
 
                 </div>
@@ -101,4 +82,4 @@ function orderCreation2() {
   );
 }
 
-export default orderCreation2;
+export default OrderCreation2;

@@ -7,29 +7,9 @@ import Button from 'react-bootstrap/Button';
 
 
 
-function orderCreation3() {
+function OrderCreation3() {
   return (
-    <div class="content3">
-        <div class="back3">
-            <i class="angle left icon"></i>
-            <Button variant="link" href="/App">Back to sales Order</Button>
-        </div>
-        <div class="title3">
-            <h1>Create a new sales order</h1>
-        </div>
-
-        <div class="nav-row3">
-            <a href="/orderCreation1">Customer Information</a>
-            <a href="/orderCreation2">Billing</a>
-
-            <a class="ship3">Shipping</a>
-
-            <a href="/orderCreation4">Contents</a>
-            <a href="/orderCreation5">Summary</a>
-        </div>
-
-        <ProgressBar animated now={60} />
-
+    <div class="content1">
         <div class="ship-info3">
             <div class="ship-address3">
 
@@ -63,17 +43,17 @@ function orderCreation3() {
                   <div class="address3">
                     <Form.Group className="mb-3" controlId="customerID">
                         <Form.Label>ID</Form.Label>
-                        <Form.Control type="number" placeholder="enter ID" />
+                        <Form.Control type="number" placeholder="Enter ID" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="customerName">
                       <Form.Label>Name</Form.Label>
-                      <Form.Control type="text" placeholder="enter Name" />
+                      <Form.Control type="text" placeholder="Enter Name" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="shippingDate">
                       <Form.Label>Shipping Date</Form.Label>
-                      <Form.Control type="date" placeholder="enter Date" />
+                      <Form.Control type="date" placeholder="Enter Date" />
                     </Form.Group>
 
                   </div>
@@ -84,17 +64,17 @@ function orderCreation3() {
                 <div class="contact3">
                       <Form.Group className="mb-3" controlId="contactNumber">
                           <Form.Label>Contact Number</Form.Label>
-                          <Form.Control type="number" placeholder="enter Contact Number" />
+                          <Form.Control type="number" placeholder="Enter Contact Number" />
                       </Form.Group>
 
                       <Form.Group className="mb-3" controlId="formBasicEmail">
                           <Form.Label>Email address</Form.Label>
-                          <Form.Control type="email" placeholder="enter email" />
+                          <Form.Control type="email" placeholder="Enter email" />
                       </Form.Group>
 
                       <Form.Group className="mb-3" controlId="personToAlert">
                           <Form.Label>Person/Dept. to alert</Form.Label>
-                          <Form.Control type="text" placeholder="enter name or dept." />
+                          <Form.Control type="text" placeholder="Enter name or dept." />
                       </Form.Group>
 
                 </div>
@@ -108,7 +88,7 @@ function orderCreation3() {
 
                     <Form.Group className="mb-3" controlId="deliveryDate">
                       <Form.Label>Delivery Date</Form.Label>
-                      <Form.Control type="date" placeholder="enter Date" />
+                      <Form.Control type="date" placeholder="Enter Date" />
                     </Form.Group>
                 </div>
             </div>
@@ -123,4 +103,4 @@ function orderCreation3() {
   );
 }
 
-export default orderCreation3;
+export default OrderCreation3;

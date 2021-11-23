@@ -10,7 +10,7 @@
     flex-direction: column;
     justify-content: center;
     width: 1000px;
-    padding: 0 2.5rem;
+    padding: 0 5.5rem;
 }
 
 .right-login {
@@ -29,22 +29,40 @@
 .title-class {
     height: 60%;
     background: #0ABAB5;
+    justify-content: center;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    padding: 1.5rem;
 }
 
-form {
-    width: 100%;
-}
 
 img {
     width: 100%;
 }
 
-.brand, .brand2{
+.brand2{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
     text-align: center;
-    font-family: 'Comfortaa', cursive;
+    font-family: 'Open sans';
+    font-weight: 500;
 }
 
+.brand{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: left;
+    font-family: 'Comfortaa', cursive; 
+    font-weight: bolder;
+}
+
+.btn1 {
+    width: 100%;
+    text-align: center;
+    
+}
