@@ -9,7 +9,7 @@ import SideMenu from './components/SideMenu';
 import CustomerManagement from './components/CustomerManagement';
 import Sales from './components/Sales';
 import SalesGraph from './components/SalesGraph';
-import OrderCreation1 from './OrderCreation/orderCreation1'
+import OrderCreation1 from './OrderCreation/OrderCreation1'
 import OrderCreation2 from './OrderCreation/orderCreation2'
 import OrderCreation3 from './OrderCreation/orderCreation3'
 import OrderCreation4 from './OrderCreation/orderCreation4'
@@ -27,6 +27,7 @@ import {
   Link
 } from "react-router-dom";
 import Login from './login/login';
+import OrderCreation from './OrderCreation/OrderCreation';
 
 
 function App() {
@@ -101,6 +102,7 @@ function App() {
           <Route path="/orderCompleted" component={OrderCompleted} />
           <Route path="/orderRejected" component={OrderRejected} />
           <Route path="/orderDrafting" component={OrderDrafting} />
+          <Route path="/order-creation" component={OrderCreation} />
 
           <Route path="/login" component={Login}/>
           <Route path="/customers" component={CustomerManagement} />
