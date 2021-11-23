@@ -9,11 +9,11 @@ import SideMenu from './components/SideMenu';
 import CustomerManagement from './components/CustomerManagement';
 import Sales from './components/Sales';
 import SalesGraph from './components/SalesGraph';
-import OrderCreation1 from './OrderCreation/orderCreation1'
-import OrderCreation2 from './OrderCreation/orderCreation2'
-import OrderCreation3 from './OrderCreation/orderCreation3'
-import OrderCreation4 from './OrderCreation/orderCreation4'
-import OrderCreation5 from './OrderCreation/orderCreation5'
+import OrderCreation1 from './OrderCreation/OrderCreation1'
+import OrderCreation2 from './OrderCreation/OrderCreation2'
+import OrderCreation3 from './OrderCreation/OrderCreation3'
+import OrderCreation4 from './OrderCreation/OrderCreation4'
+import OrderCreation5 from './OrderCreation/OrderCreation5'
 import OrderProcessing from './OrderCreation/orderProcessing'
 import OrderCompleted from './OrderCreation/orderCompleted'
 import OrderRejected from './OrderCreation/orderRejected'
@@ -27,6 +27,7 @@ import {
   Link
 } from "react-router-dom";
 import Login from './login/login';
+import OrderCreation from './OrderCreation/OrderCreation';
 
 
 function App() {
@@ -50,22 +51,12 @@ function App() {
             <Link to="/SalesGraph">
               <li>SalesGraph</li>
             </Link>
+            <Link to="/order-creation/1">
+              <li>Sales Order Creation</li>
+            </Link>
 
-            <Link to="/orderCreation1">
-              <li>orderCreation1</li>
-            </Link>
-            <Link to="/orderCreation2">
-              <li>orderCreation2</li>
-            </Link>
-            <Link to="/orderCreation3">
-              <li>orderCreation3</li>
-            </Link>
-            <Link to="/orderCreation4">
-              <li>orderCreation4</li>
-            </Link>
-            <Link to="/orderCreation5">
-              <li>orderCreation5</li>
-            </Link>
+           
+            
             <Link to="/orderProcessing">
               <li>orderProcessing</li>
             </Link>
@@ -101,6 +92,7 @@ function App() {
           <Route path="/orderCompleted" component={OrderCompleted} />
           <Route path="/orderRejected" component={OrderRejected} />
           <Route path="/orderDrafting" component={OrderDrafting} />
+          <Route path="/order-creation" component={OrderCreation} />
 
           <Route path="/login" component={Login}/>
           <Route path="/customers" component={CustomerManagement} />

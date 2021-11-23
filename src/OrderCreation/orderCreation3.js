@@ -7,29 +7,9 @@ import Button from 'react-bootstrap/Button';
 
 
 
-function orderCreation3() {
+function OrderCreation3() {
   return (
-    <div class="content3">
-        <div class="back3">
-            <i class="angle left icon"></i>
-            <Button variant="link" href="/App">Back to sales Order</Button>
-        </div>
-        <div class="title3">
-            <h1>Create a new sales order</h1>
-        </div>
-
-        <div class="nav-row3">
-            <a href="/orderCreation1">Customer Information</a>
-            <a href="/orderCreation2">Billing</a>
-
-            <a class="ship3">Shipping</a>
-
-            <a href="/orderCreation4">Contents</a>
-            <a href="/orderCreation5">Summary</a>
-        </div>
-
-        <ProgressBar animated now={60} />
-
+    <div class="content1">
         <div class="ship-info3">
             <div class="ship-address3">
 
@@ -123,4 +103,4 @@ function orderCreation3() {
   );
 }
 
-export default orderCreation3;
+export default OrderCreation3;

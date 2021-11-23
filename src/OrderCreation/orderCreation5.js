@@ -83,25 +83,7 @@ function OrderCreation5() {
     
     
   return (
-    <div class="content5">
-        <div class="back5">
-            <i class="angle left icon"></i>
-            <Button variant="link" href="/App">Back to sales Order</Button>
-        </div>
-        <div class="title5">
-            <h1>Create a new sales order</h1>
-        </div>
-
-        <div class="nav-row5">
-            <a href="/orderCreation1">Customer Information</a>
-            <a href="/orderCreation2">Billing</a>
-            <a href="/orderCreation3">Shipping</a>
-            <a href="/orderCreation4">Contents</a>
-
-            <a class="cont5">Summary</a>
-        </div>
-
-        <ProgressBar animated now={100} />
+    <div class="content1">
 
         <div class="note5">
             <div class="warning5">
