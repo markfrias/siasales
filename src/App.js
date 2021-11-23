@@ -13,7 +13,7 @@ import OrderCreation1 from './OrderCreation/OrderCreation1'
 import OrderCreation2 from './OrderCreation/OrderCreation2'
 import OrderCreation3 from './OrderCreation/OrderCreation3'
 import OrderCreation4 from './OrderCreation/OrderCreation4'
-import OrderCreation5 from './OrderCreation/orderCreation5'
+import OrderCreation5 from './OrderCreation/OrderCreation5'
 import OrderProcessing from './OrderCreation/orderProcessing'
 import OrderCompleted from './OrderCreation/orderCompleted'
 import OrderRejected from './OrderCreation/orderRejected'
@@ -53,15 +53,7 @@ function App() {
             </Link>
 
            
-            <Link to="/orderCreation3">
-              <li>orderCreation3</li>
-            </Link>
-            <Link to="/orderCreation4">
-              <li>orderCreation4</li>
-            </Link>
-            <Link to="/orderCreation5">
-              <li>orderCreation5</li>
-            </Link>
+            
             <Link to="/orderProcessing">
               <li>orderProcessing</li>
             </Link>
