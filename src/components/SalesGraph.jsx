@@ -22,7 +22,7 @@ const SalesGraph = () => {
     const [chartData, setChartData] = useState({});
 
     useEffect(() => {
-        fetch('https://api-cloud-shipping.klylylydeee.xyz/analytics/transactions/cost/monthly?year=2021', {
+        fetch('https://api-cloud-shipping.klylylydeee.xyz/analytics/transactions/avg-cost/monthly?year=2021', {
         headers: {
             'TPSRole': "salesIntegration",
             'TPSAuthenticate': "Handler eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbnRlZ3JhdGlvbl9wYXJ0bmVyIjoiZDcxOTE3ZjctZWRiZC00MjFjLThlZTAtMjhjODc0OGI5NDNlIiwiaWF0IjoxNjMyNTQ0NDI4fQ.kbOpoIdeW10cXLXAcuqyymWtC3cvI8rUHZxAiHsMSes",
@@ -33,12 +33,10 @@ const SalesGraph = () => {
         }
         )
         .then (response => response.json())
-        .then(data => setChartData(data.payload.transactions))
+        .then(data => setChartData(data.payload))
         .catch(error => console.log("Error"))
     }, [])
-
-    console.log(chartData)
-
+ 
 
     return (
         <div className="py-2 px-4">
@@ -53,23 +51,13 @@ const SalesGraph = () => {
             </div>
 
             <div className="mt-4">
-                <div className="row">
-                    <div className="col-auto">
-                        <div class="input-group input-group-sm mb-3 bg-light">
-                            <label class="input-group-text bg-light" for="inputGroupSelect01">Customer Type:</label>
-                            <select class="form-select bg-light form-control-sm" id="inputGroupSelect01">
-                                <option value="">All</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
                 <div className="p-3 bg-light">
                     <ResponsiveContainer width="100%" height={300}>
                         <LineChart width="100%" height={300} data={chartData}>
-                            <Line dataKey="total" stroke="#109e00" />
+                            <Line dataKey="average_cost" stroke="#109e00" />
                             <CartesianGrid stroke="#ccc" />
                             <XAxis dataKey="month" />
-                            <YAxis dataKey="total" />
+                            <YAxis dataKey="average_cost" />
                         </LineChart>
                     </ResponsiveContainer>
                 </div>
@@ -80,7 +68,7 @@ const SalesGraph = () => {
                             <p>x-axis - month</p>
                         </div>
                         <div className="col-sm-3">
-                            <p>y-axis - cost</p>
+                            <p>y-axis - average individual spending</p>
                         </div>
                     </div>
                 </div>
