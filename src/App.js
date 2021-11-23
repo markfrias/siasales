@@ -51,6 +51,9 @@ function App() {
             <Link to="/SalesGraph">
               <li>SalesGraph</li>
             </Link>
+            <Link to="/order-creation/1">
+              <li>Sales Order Creation</li>
+            </Link>
 
            
             
