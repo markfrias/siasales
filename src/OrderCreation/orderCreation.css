@@ -39,7 +39,7 @@ body {
     cursor: pointer;
 }
 
-.nav-row1 .cust-info1 {
+.nav-row-active {
     border-radius: 10px;
     background-color: #0ABAB5;
 }

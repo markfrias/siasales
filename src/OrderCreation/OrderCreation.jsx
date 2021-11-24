@@ -34,11 +34,11 @@ const OrderCreation = () => {
                 <div class="nav-row1">
                     
                     
-                    <NavLink to={`${url}/1`}>Customer Information</NavLink>
-                    <NavLink to={`${url}/2`}>Billing</NavLink>
-                    <NavLink to={`${url}/3`}>Shipping</NavLink>
-                    <NavLink to={`${url}/4`}>Contents</NavLink>
-                    <NavLink to={`${url}/5`}>Summary</NavLink>
+                    <NavLink to={`${url}/1`} activeClassName="nav-row-active">Customer Information</NavLink>
+                    <NavLink to={`${url}/2`} activeClassName="nav-row-active">Billing</NavLink>
+                    <NavLink to={`${url}/3`} activeClassName="nav-row-active">Shipping</NavLink>
+                    <NavLink to={`${url}/4`} activeClassName="nav-row-active">Contents</NavLink>
+                    <NavLink to={`${url}/5`} activeClassName="nav-row-active">Summary</NavLink>
                 </div>
 
             <ProgressBar animated now={20} />
