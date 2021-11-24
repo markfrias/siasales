@@ -4,15 +4,16 @@ import 'semantic-ui-css/semantic.min.css'
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { useState } from 'react';
 
 
 
 
 
 
-function OrderCreation1() {
-
+function OrderCreation1(props) {
     
+
     return (
         <div class="content1">
                 <div class="note1">
@@ -50,13 +51,15 @@ function OrderCreation1() {
                         </Form>
 
                         <div class="address1">
+                                <p>{props.fields.customerId}</p>
+                                <p>{props.fields.customerName}</p>
                                 <Form.Group className="mb-3" controlId="customerID">
                                     <Form.Label>Customer ID</Form.Label>
-                                    <Form.Control type="number" placeholder="Enter Customer ID" />
+                                    <Form.Control placeholder="Enter Customer ID" name="customerId" value={props.fields.name} onChange={props.handleChange}/>
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="customerName">
                                     <Form.Label>Customer Name</Form.Label>
-                                    <Form.Control type="text" placeholder=" Enter Customer Name" />
+                                    <Form.Control name="customerName" value={props.fields.customerName} onChange={props.handleChange} type="text" placeholder=" Enter Customer Name" />
                                 </Form.Group>
                         </div>
 

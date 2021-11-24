@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, ProgressBar } from 'react-bootstrap';
 import './orderCreation.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -20,6 +20,19 @@ import OrderCreation5 from './OrderCreation5';
 const OrderCreation = () => {
 
     let { path, url } = useRouteMatch();
+    const initialState = {
+        customerId: "",
+        person: "", 
+        customerName: ""
+    }
+    const [form, setForm] = useState(initialState)
+    function handleChange(event) {
+        const target = event.target;
+        const value = target.value
+        const name = target.name;
+
+        setForm({...form, [event.target.name]: event.target.value})
+    }
     
     return (
         <div>
@@ -48,7 +61,7 @@ const OrderCreation = () => {
         <Switch>
             {console.log(path)}
             <Route exact path="/order-creation/1">
-               <OrderCreation1/>
+               <OrderCreation1 fields={form} handleChange={handleChange}/>
             </Route>
 
             <Route path={`${path}/2`}>
