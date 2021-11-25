@@ -32,7 +32,14 @@ const OrderCreation = () => {
         contactNumber: "",
         email: "",
         pointOfContact: "",
-        submissionDate: ""
+        submissionDate: "",
+        billingStreetAddress: "",
+        billingProvince: "",
+        billingCity: "",
+        billingPostalCode: "",
+        billingEmailAddress: "",
+        billingContactNumber: "",
+        billingPerson: "",
 
 
 
