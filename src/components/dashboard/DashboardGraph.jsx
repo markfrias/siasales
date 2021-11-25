@@ -24,8 +24,8 @@ const DashboardGraph = () => {
 
   return (
            
-    <div className="py-5 px-4"
->
+    <div className="dashboardGraph">
+
       <div className="mt-3">
         <h3 className="fw-bolder">Monthly Sales Comparison</h3>
         <p>Last updated December 2, 2021 5:30pm</p>

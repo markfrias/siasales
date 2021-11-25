@@ -2,7 +2,7 @@
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 import DashboardGraph from "./DashboardGraph"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import "./dashboard.css"
 
 
 const Dashboard = () => {

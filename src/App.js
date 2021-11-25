@@ -22,12 +22,25 @@ import {
 } from "react-router-dom";
 import Login from './login/login';
 import Dashboard from './components/dashboard/Dashboard';
+import SideMenu from './components/SideBar/SideMenu';
+import DashboardGraph from './components/dashboard/DashboardGraph';
 
 
 function App() {
   return ( 
-  <Router>
-    {/* <div className="App">
+
+    <div className="container">
+      <SideMenu />
+     <DashboardGraph />
+    </div>
+
+/*  <Router>
+    <SideMenu />
+    <Switch>
+      <Route path='/' />
+    </Switch>
+    
+     <div className="App">
          
       <nav> 
           <ul>
@@ -71,10 +84,10 @@ function App() {
            </Link>
            
          </ul>
-         </nav> */}
+         </nav> 
 
-          <Switch>
-            {/* <Route path="/" component={login} /> */}
+      {/*     <Switch>
+            <Route path="/" component={login} /> 
             <Route path="/registration1" component={Registration1} />
             <Route path="/registration2" component={Registration2} />
             <Route path="/registration3" component={Registration3} />
@@ -92,7 +105,7 @@ function App() {
           <Route path="/customers" component={CustomerManagement} />
         </Switch>
       
-    </Router>
+    </Router>*/
 
   
 
