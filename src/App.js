@@ -5,9 +5,7 @@ import Registration1 from './registration/registration1'
 import Registration2 from './registration/registration2'
 import Registration3 from './registration/registration3'
 import Registration4 from './registration/registration4'
-import SideMenu from './components/SideMenu';
 import CustomerManagement from './components/CustomerManagement';
-
 import OrderCreation1 from './OrderCreation/orderCreation1'
 import OrderCreation2 from './OrderCreation/orderCreation2'
 import OrderCreation3 from './OrderCreation/orderCreation3'
@@ -23,13 +21,15 @@ import {
   Link
 } from "react-router-dom";
 import Login from './login/login';
+import Dashboard from './components/dashboard/Dashboard';
 
 
 function App() {
-  return (
-    <div className="App">
-          <Router>
-      <nav>
+  return ( 
+  <Router>
+    {/* <div className="App">
+         
+      <nav> 
           <ul>
             <Link to="/registration1">
               <li>1</li>
@@ -66,18 +66,19 @@ function App() {
               <li>orderCompleted</li>
             </Link>
 
-            <Link to="/login">
-              <li>4</li>
-            </Link>
-            
-          </ul>
-      </nav>
+           <Link to="/login">
+             <li>4</li>
+           </Link>
+           
+         </ul>
+         </nav> */}
 
-        <Switch>
-          <Route path="/registration1" component={Registration1} />
-          <Route path="/registration2" component={Registration2} />
-          <Route path="/registration3" component={Registration3} />
-          <Route path="/registration4" component={Registration4} />
+          <Switch>
+            {/* <Route path="/" component={login} /> */}
+            <Route path="/registration1" component={Registration1} />
+            <Route path="/registration2" component={Registration2} />
+            <Route path="/registration3" component={Registration3} />
+            <Route path="/registration4" component={Registration4} />
 
           <Route path="/orderCreation1" component={OrderCreation1} />
           <Route path="/orderCreation2" component={OrderCreation2} />
@@ -93,19 +94,11 @@ function App() {
       
     </Router>
 
-    <div className="row gx-3">
-      <div className="col-lg-auto w-5 col-sm-0 col-0">
-          <SideMenu/>
-      </div>
-      <div className="col">
-        <CustomerManagement/>
-      </div>
-    </div>
-</div>
+  
 
 
-  );
-}
+    );
+  }
 
 
-export default App;
+  export default App;
