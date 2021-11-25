@@ -71,7 +71,7 @@ function MyVerticallyCenteredModal(props) {
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide} >Add</Button>
+        <Button onClick={props.onAdd} >Add</Button>
       </Modal.Footer>
     </Modal>
 
@@ -115,7 +115,10 @@ function handleAddBtnClick() {
                 <MyVerticallyCenteredModal
                     show={modalShow}
                     onHide={() => {setModalShow(false)
-                    handleAddBtnClick();
+                    }}
+                    onAdd={() => {
+                      setModalShow(false);
+                      handleAddBtnClick();
                     }}
                     item={newItem}
                     handleBtnClick={() => handleAddBtnClick}
