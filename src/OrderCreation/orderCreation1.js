@@ -55,7 +55,7 @@ function OrderCreation1(props) {
                                 <p>{props.fields.customerName}</p>
                                 <Form.Group className="mb-3" controlId="customerID">
                                     <Form.Label>Customer ID</Form.Label>
-                                    <Form.Control placeholder="Enter Customer ID" name="customerId" value={props.fields.name} onChange={props.handleChange}/>
+                                    <Form.Control placeholder="Enter Customer ID" name="customerId" value={props.fields.customerId} onChange={props.handleChange}/>
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="customerName">
                                     <Form.Label>Customer Name</Form.Label>
@@ -66,22 +66,22 @@ function OrderCreation1(props) {
                             <div class="address11">
                                 <Form.Group className="mb-3" controlId="streetAddress">
                                     <Form.Label>Street Address</Form.Label>
-                                    <Form.Control type="text" placeholder="Street Address" />
+                                    <Form.Control name="streetAddress" value={props.fields.streetAddress} onChange={props.handleChange} type="text" placeholder="Street Address" />
                                     
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="Province">
                                     <Form.Label>Province</Form.Label>
-                                    <Form.Control type="text" placeholder="Province" />
+                                    <Form.Control name="province" value={props.fields.province} onChange={props.handleChange} type="text" placeholder="Province" />
                                     
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="City">
                                     <Form.Label>City</Form.Label>
-                                    <Form.Control type="text" placeholder="City" />
+                                    <Form.Control name="city" value={props.fields.city} onChange={props.handleChange} type="text" placeholder="City" />
                                     
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="postalCode">
                                     <Form.Label>Postal Code</Form.Label>
-                                    <Form.Control type="text" placeholder="Postal Code" />
+                                    <Form.Control name="postalCode" value={props.fields.postalCode} onChange={props.handleChange} type="text" placeholder="Postal Code" />
                                     
                                 </Form.Group>
                             </div>
@@ -93,22 +93,23 @@ function OrderCreation1(props) {
                         <div class="contact1">
                                 <Form.Group className="mb-3" controlId="contactNumber">
                                     <Form.Label>Contact Number</Form.Label>
-                                    <Form.Control type="number" placeholder="Enter Contact Number" />
+                                    <Form.Control name="contactNumber" value={props.fields.contactNumber} onChange={props.handleChange} type="text" placeholder="Enter Contact Number" />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Email address</Form.Label>
-                                    <Form.Control type="email" placeholder="Enter email" />
+                                    <Form.Control name="email" value={props.fields.email} onChange={props.handleChange} type="email" placeholder="Enter email" />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="pointOfContact">
                                     <Form.Label>Point of Contact</Form.Label>
-                                    <Form.Control type="text" placeholder=" Point of Contact" />
+                                    <Form.Control name="pointOfContact" value={props.fields.pointOfContact} onChange={props.handleChange} type="text" placeholder=" Point of Contact" />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="dateOfSubmission">
                                     <Form.Label>Date of Submission</Form.Label>
-                                    <Form.Control type="date" placeholder=" Date of Submission" />
+                                    <Form.Control name="submissionDate" value={props.fields.submissionDate} onChange={props.handleChange} type="date" />
+                                    <p>{props.fields.submissionDate}</p>
                                 </Form.Group>
                         </div>
                     </div>

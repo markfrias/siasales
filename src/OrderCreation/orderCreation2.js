@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 
 
 
-function OrderCreation2() {
+function OrderCreation2(props) {
   return (
     <div class="content1">
 

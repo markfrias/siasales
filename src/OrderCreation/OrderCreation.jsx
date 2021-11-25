@@ -20,10 +20,24 @@ import OrderCreation5 from './OrderCreation5';
 const OrderCreation = () => {
 
     let { path, url } = useRouteMatch();
+    const initialDate = new Date()
     const initialState = {
         customerId: "",
         person: "", 
-        customerName: ""
+        customerName: "",
+        streetAddress: "",
+        province: "",
+        city: "",
+        postalCode: "",
+        contactNumber: "",
+        email: "",
+        pointOfContact: "",
+        submissionDate: ""
+
+
+
+
+
     }
     const [form, setForm] = useState(initialState)
     function handleChange(event) {
@@ -65,19 +79,19 @@ const OrderCreation = () => {
             </Route>
 
             <Route path={`${path}/2`}>
-                <OrderCreation2 />
+                <OrderCreation2 fields={form} handleChange={handleChange}/>
             </Route>
 
             <Route path={`${path}/3`}>
-                <OrderCreation3 />
+                <OrderCreation3 fields={form} handleChange={handleChange}/>
             </Route>
             
             <Route path={`${path}/4`}>
-                <OrderCreation4 />
+                <OrderCreation4 fields={form} handleChange={handleChange}/>
             </Route>
 
             <Route path={`${path}/5`}>
-                <OrderCreation5 />
+                <OrderCreation5 fields={form} handleChange={handleChange}/>
             </Route>
       </Switch>
 
