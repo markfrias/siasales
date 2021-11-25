@@ -40,6 +40,7 @@ const OrderCreation = () => {
         billingEmailAddress: "",
         billingContactNumber: "",
         billingPerson: "",
+        tableItems: []
 
 
 
@@ -53,6 +54,13 @@ const OrderCreation = () => {
         const name = target.name;
 
         setForm({...form, [event.target.name]: event.target.value})
+    }
+
+    function handleTableEntry(itemData) {
+        console.log(form)
+        console.log(itemData)
+        setForm({...form, tableItems: [...form.tableItems, itemData]})
+        console.log(form)
     }
     
     return (
@@ -94,7 +102,7 @@ const OrderCreation = () => {
             </Route>
             
             <Route path={`${path}/4`}>
-                <OrderCreation4 fields={form} handleChange={handleChange}/>
+                <OrderCreation4 fields={form} handleChange={handleChange} handleTableEntry={handleTableEntry}/>
             </Route>
 
             <Route path={`${path}/5`}>

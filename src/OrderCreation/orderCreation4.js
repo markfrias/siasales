@@ -5,7 +5,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
-import React from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 
 function MyVerticallyCenteredModal(props) {
@@ -27,28 +27,28 @@ function MyVerticallyCenteredModal(props) {
             
               <Form.Group className="mb-3" controlId="ItemNo">
                   <Form.Label><h4>Item Number:</h4></Form.Label>
-                  <Form.Control type="number" />
+                  <Form.Control name="itemNumber" value={props.item.itemNumber} onChange={props.handleChange}  />
               </Form.Group>
               <h4>
                 Item Name:
               </h4>
-              <a>
-                Toyota Corolla 2021
-              </a>
+              <p>
+                {parseFloat(props.item.itemName)}
+              </p>
 
               <h4>
                 Item Description:
               </h4>
-              <a>
-                Toyota Corolla 2021 Black Automatic Transmission
-              </a>
+              <p>
+                {props.item.itemDescription}
+              </p>
 
               <h4>
                 Unit Price:
               </h4>
-              <a>
-                Php. 1,000,000.00
-              </a>
+              <p>
+                {props.item.unitPrice}
+              </p>
             
           </div>
 
@@ -56,15 +56,16 @@ function MyVerticallyCenteredModal(props) {
             
               <Form.Group className="mb-3" controlId="Quantity">
                   <Form.Label ><h4>Quantity:</h4></Form.Label>
-                  <Form.Control type="number" />
+                  <Form.Control
+                  name="quantity" value={props.item.quantity} onChange={props.handleChange} type="number" />
               </Form.Group>
 
               <h4>
                 Unit Price:
               </h4>
-              <a>
-                Php. 1,000,000.00
-              </a>
+              <p>
+                {props.item.unitPrice}
+              </p>
             
           </div>
         </div>
@@ -78,8 +79,33 @@ function MyVerticallyCenteredModal(props) {
   );
 }
 
-function OrderCreation4() {
+function OrderCreation4(props) {
+  const initNewItem = {
+    itemNumber: "2233444",
+    itemName: "Toyota Corolla 2019",
+    itemDescription: "Manual transmission Toyota Coralla Altis 2019",
+    quantity: "1",
+    unitPrice: 900000 ,
+  }
+
+  
+  function handleChange(event) {
+    const target = event.target;
+    const value = target.value
+    const name = target.name;
+
+    setNewItem({...newItem, [event.target.name]: event.target.value})
+    
+}
+function handleAddBtnClick() {
+  props.handleTableEntry(newItem)
+  console.log(newItem)
+  console.log(parseFloat(newItem.unitPrice))
+}
+
+
   const [modalShow, setModalShow] = React.useState(false);
+  const [newItem, setNewItem] = useState(initNewItem);
   return (
     <div class="content1">
         <div class="item4">
@@ -88,7 +114,12 @@ function OrderCreation4() {
             <Button variant="primary" onClick={() => setModalShow(true)}>Add New Item</Button>
                 <MyVerticallyCenteredModal
                     show={modalShow}
-                    onHide={() => setModalShow(false)}
+                    onHide={() => {setModalShow(false)
+                    handleAddBtnClick();
+                    }}
+                    item={newItem}
+                    handleBtnClick={() => handleAddBtnClick}
+                    handleChange={handleChange}
                 />
           </div>
         </div>
@@ -106,44 +137,22 @@ function OrderCreation4() {
               <th>Options</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>0123456789</td>
-                <td>Toyota PH</td>
-                <td>Toyota Carolla 2021 Same</td>
-                <td>2</td>
-                <td>PhP 50,000</td>
-                <td>PhP 100,000</td>
+            
+              {props.fields.tableItems.map(item => (
+                <tbody key={item.itemId}>
+                <tr>
+                <td>{item.itemNumber}</td>
+                <td>{item.itemName}</td>
+                <td>{item.itemDescription}</td>
+                <td>{item.quantity}</td>
+                <td>{item.unitPrice}</td>
+                <td>{item.quantity * parseFloat(item.unitPrice)}</td>
                 <i class="ellipsis vertical icon"></i>
               </tr>
-              <tr>
-                <td>012345678</td>
-                <td>Toyota PH</td>
-                <td>None</td>
-                <td>None</td>
-                <td>PhP none</td>
-                <td>PhP none</td>
-                <i class="ellipsis vertical icon"></i>
-              </tr>
-              <tr>
-                <td>01234567</td>
-                <td>Toyota PH</td>
-                <td>None</td>
-                <td>None</td>
-                <td>PhP none</td>
-                <td>PhP none</td>
-                <i class="ellipsis vertical icon"></i>
-              </tr>
-              <tr>
-                <td>0123456</td>
-                <td>Toyota PH</td>
-                <td>none</td>
-                <td>none</td>
-                <td>PhP none</td>
-                <td>PhP none</td>
-                <i class="ellipsis vertical icon"></i>
-              </tr>
-            </tbody>
+              </tbody>
+
+              ))}
+              
           </Table>
         </div>
 
