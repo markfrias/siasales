@@ -33,7 +33,7 @@ function MyVerticallyCenteredModal(props) {
                 Item Name:
               </h4>
               <p>
-                {parseFloat(props.item.itemName)}
+                {props.item.itemName}
               </p>
 
               <h4>
@@ -97,6 +97,8 @@ function OrderCreation4(props) {
     setNewItem({...newItem, [event.target.name]: event.target.value})
     
 }
+
+
 function handleAddBtnClick() {
   props.handleTableEntry(newItem)
   console.log(newItem)
@@ -140,21 +142,28 @@ function handleAddBtnClick() {
               <th>Options</th>
               </tr>
             </thead>
+              
+              <tbody>
+              {props.fields.tableItems.length > 0 ?
+                props.fields.tableItems.map(item => (
+                  <tr key={item.itemId}>
+                  <td>{item.itemNumber}</td>
+                  <td>{item.itemName}</td>
+                  <td>{item.itemDescription}</td>
+                  <td>{item.quantity}</td>
+                  <td>{item.unitPrice}</td>
+                  <td>{item.quantity * parseFloat(item.unitPrice)}</td>
+                  <i class="ellipsis vertical icon"></i>
+                </tr>
+                ))
+            :
             
-              {props.fields.tableItems.map(item => (
-                <tbody key={item.itemId}>
-                <tr>
-                <td>{item.itemNumber}</td>
-                <td>{item.itemName}</td>
-                <td>{item.itemDescription}</td>
-                <td>{item.quantity}</td>
-                <td>{item.unitPrice}</td>
-                <td>{item.quantity * parseFloat(item.unitPrice)}</td>
-                <i class="ellipsis vertical icon"></i>
-              </tr>
-              </tbody>
-
-              ))}
+              <td>Please add an item by clicking the "Add New Item" button above.</td>
+            
+            
+            }
+            </tbody>
+              
               
           </Table>
         </div>
@@ -164,22 +173,22 @@ function handleAddBtnClick() {
           <div class="cont-left4">
                     <Form.Group className="mb-3" controlId="discount">
                         <Form.Label>Discount</Form.Label>
-                        <Form.Control type="number" />          
+                        <Form.Control name="discount" value={props.fields.orderDetails.discount} onChange={props.handleCalc} type="number" />          
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="taxRate">
                         <Form.Label>Tax Rate (%)</Form.Label>
-                        <Form.Control type="number"/>   
+                        <Form.Control name="taxRate" value={props.fields.orderDetails.taxRate} onChange={props.handleCalc} type="number"/>   
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="other">
                         <Form.Label>Other</Form.Label>
-                        <Form.Control type="number" />
+                        <Form.Control name="otherFees" value={props.fields.orderDetails.otherFees} onChange={props.handleCalc} type="number" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="shipHandleFee">
                         <Form.Label>Shipping/Handling Fee</Form.Label>
-                        <Form.Control type="number"/>
+                        <Form.Control name="shippingFee" value={props.fields.orderDetails.shippingFee} onChange={props.handleCalc} type="number"/>
                     </Form.Group>
           </div>
 

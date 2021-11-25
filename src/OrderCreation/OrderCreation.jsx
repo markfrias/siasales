@@ -40,7 +40,13 @@ const OrderCreation = () => {
         billingEmailAddress: "",
         billingContactNumber: "",
         billingPerson: "",
-        tableItems: []
+        tableItems: [],
+        orderDetails: {
+            discount: 0,
+            taxRate: 10,
+            shippingFee: 0,
+            otherFees: 0
+        }
 
 
 
@@ -48,12 +54,20 @@ const OrderCreation = () => {
 
     }
     const [form, setForm] = useState(initialState)
+    
+    // Changes value of fields and the state based on changes in the field
     function handleChange(event) {
         const target = event.target;
         const value = target.value
         const name = target.name;
 
         setForm({...form, [event.target.name]: event.target.value})
+    }
+
+    // Changes value of fields in the order details and state and calculates the fees
+    function handleCalc(event) {
+        const target = event.target;
+        setForm({...form, orderDetails: {...form.orderDetails, [target.name]: target.value}})
     }
 
     function handleTableEntry(itemData) {
@@ -102,7 +116,7 @@ const OrderCreation = () => {
             </Route>
             
             <Route path={`${path}/4`}>
-                <OrderCreation4 fields={form} handleChange={handleChange} handleTableEntry={handleTableEntry}/>
+                <OrderCreation4 fields={form} handleChange={handleChange} handleCalc={handleCalc} handleTableEntry={handleTableEntry}/>
             </Route>
 
             <Route path={`${path}/5`}>
