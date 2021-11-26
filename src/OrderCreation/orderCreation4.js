@@ -84,7 +84,7 @@ function OrderCreation4(props) {
     itemNumber: "2233444",
     itemName: "Toyota Corolla 2019",
     itemDescription: "Manual transmission Toyota Coralla Altis 2019",
-    quantity: "1",
+    quantity: "",
     unitPrice: 900000 ,
   }
 
@@ -93,8 +93,13 @@ function OrderCreation4(props) {
     const target = event.target;
     const value = target.value
     const name = target.name;
+    console.log(target.value)
+    setNewItem({...newItem, 
 
-    setNewItem({...newItem, [event.target.name]: event.target.value})
+      [event.target.name]: event.target.name == "quantity" ?
+      parseInt(target.value) :
+      target.value
+      })
     
 }
 
@@ -107,6 +112,7 @@ function handleAddBtnClick() {
 
 
   const [modalShow, setModalShow] = React.useState(false);
+  //const [calculations, setCalculations] = useState()
   const [newItem, setNewItem] = useState(initNewItem);
   return (
     <div class="content1">
@@ -207,7 +213,7 @@ function handleAddBtnClick() {
           </div>
 
           <div class="cont-right4">
-              <h4>300,000</h4>
+              <h4>{props.calc.subtotal}</h4>
               <h4>10,000</h4>
               <h4>10,000</h4>
               <h4>10,000</h4>
