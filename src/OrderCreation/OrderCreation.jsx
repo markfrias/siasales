@@ -35,6 +35,13 @@ const OrderCreation = () => {
     billingEmailAddress: "",
     billingContactNumber: "",
     billingPerson: "",
+    billingStreetAddress: "",
+    shippingProvince: "",
+    shippingCity: "",
+    shippingPostalCode: "",
+    shippingEmailAddress: "",
+    shippingContactNumber: "",
+    shippingPerson: "",
     tableItems: [],
     orderDetails: {
       discount: 0,

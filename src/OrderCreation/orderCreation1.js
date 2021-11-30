@@ -14,7 +14,7 @@ function OrderCreation1(props) {
         <div class="warning1">
           <i class="info circle icon"></i>
           <>
-            You can laways go back to the previous by clicking the labels above
+            You can always go back to the previous steps by clicking the tabs above.
             (e.g., Billing)
           </>
         </div>
@@ -22,8 +22,9 @@ function OrderCreation1(props) {
 
       <div class="order-info1">
         <div class="order-address1">
-          <h2>Customer's Address</h2>
-
+          <h2>Customer's Basic Information</h2>
+        {
+          /*
           <Form>
             {["checkbox"].map((type) => (
               <div key={`default-${type}`} className="mb-3">
@@ -45,12 +46,14 @@ function OrderCreation1(props) {
               </div>
             ))}
           </Form>
-
+          */
+        }
+          
+        
           <div class="address1">
-            <p>{props.fields.customerId}</p>
-            <p>{props.fields.customerName}</p>
+            {/*
             <Form.Group className="mb-3" controlId="customerID">
-              <Form.Label>Customer ID</Form.Label>
+              {<Form.Label>Customer ID</Form.Label>}
               <Form.Control
                 placeholder="Enter Customer ID"
                 name="customerId"
@@ -58,6 +61,7 @@ function OrderCreation1(props) {
                 onChange={props.handleChange}
               />
             </Form.Group>
+            */}
             <Form.Group className="mb-3" controlId="customerName">
               <Form.Label>Customer Name</Form.Label>
               <Form.Control
