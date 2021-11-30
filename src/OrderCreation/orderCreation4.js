@@ -109,6 +109,7 @@ function handleAddBtnClick() {
   console.log(newItem)
   console.log(parseFloat(newItem.unitPrice))
 }
+let internationalNumberFormat = new Intl.NumberFormat('en-US')
 
 
   const [modalShow, setModalShow] = React.useState(false);
@@ -213,15 +214,22 @@ function handleAddBtnClick() {
           </div>
 
           <div class="cont-right4">
-              <h4>{props.calc.subtotal}</h4>
-              <h4>10,000</h4>
-              <h4>10,000</h4>
-              <h4>10,000</h4>
-              <h4>10,000</h4>
-              <h4>10,000</h4>
+              <h4>{internationalNumberFormat.format(props.calc.subtotal)}</h4>
+              <h4>{props.fields.orderDetails.discount !== ""
+                ? internationalNumberFormat.format(parseFloat(props.fields.orderDetails.discount))
+                : 0
+              }</h4>
+              <h4>{internationalNumberFormat.format(props.calc.subtotal - props.fields.orderDetails.discount)}</h4>
+              <h4>{internationalNumberFormat.format(props.fields.orderDetails.taxRate / 100 * (props.calc.subtotal - props.fields.orderDetails.discount))}</h4>
+              <h4>{props.fields.orderDetails.shippingFee !== ""
+                ? internationalNumberFormat.format(parseFloat(props.fields.orderDetails.shippingFee))
+                : 0}</h4>
+              <h4>{props.fields.orderDetails.otherFees !== ""
+                ? internationalNumberFormat.format(parseFloat(props.fields.orderDetails.otherFees))
+                : 0}</h4>
 
               <div class="total4">
-                <h4>PhP 350,000</h4>
+                <h4>{internationalNumberFormat.format((props.calc.subtotal - props.fields.orderDetails.discount) + (props.fields.orderDetails.taxRate / 100 * (props.calc.subtotal - props.fields.orderDetails.discount) + props.fields.orderDetails.shippingFee + props.fields.orderDetails.otherFees)) }</h4>
               </div>
           </div>
 

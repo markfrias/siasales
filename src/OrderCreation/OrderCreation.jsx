@@ -64,58 +64,60 @@ const OrderCreation = () => {
 
   // Logs subtotal every time calculations is updated
   useEffect(() => {
-    console.log(calculations.subtotal)
-  }, [calculations])
+    console.log(calculations.subtotal);
+  }, [calculations]);
 
   useEffect(() => {
     console.log(form)
-  }, [form])
+  }, [form]);
+
+  // Update calculations everytime order details form is edited
+  useEffect(() => {
+    
+  }, [form.orderDetails]);
 
   useEffect(() => {
     if (form.tableItems.length > 0) {
-        setCalculations({
-            ...calculations,
-            subtotal: form.tableItems.reduce((previous, current) => {
-                return previous + current.quantity * current.unitPrice
-    
-            }, 0),
-          });
-          
-          
-          let subtotal = 0;
-          form.tableItems.forEach(element => {
-              console.log(element.quantity)
-          });
+      setCalculations({
+        ...calculations,
+        subtotal: form.tableItems.reduce((previous, current) => {
+          return previous + current.quantity * current.unitPrice;
+        },
+         0),
+        subtotalLessDiscount: calculations.subtotal - form.orderDetails.discount,
+        totalTax: calculations.subtotalLessDiscount * (form.orderDetails.taxRate / 100),
+        total: calculations.subtotalLessDiscount + calculations.totalTax + form.orderDetails.shippingFee + form.orderDetails.otherFees
+      });
 
-          const luh = form.tableItems.reduce((previousValue, currentValue) => {
-            console.log(previousValue, currentValue.quantity)  
-            return previousValue + currentValue.quantity
+      let subtotal = 0;
+      form.tableItems.forEach((element) => {
+        console.log(element.quantity);
+      });
 
-          }, 0
-          )
-        console.log(luh)
+      const luh = form.tableItems.reduce((previousValue, currentValue) => {
+        console.log(previousValue, currentValue.quantity);
+        return previousValue + currentValue.quantity;
+      }, 0);
+      console.log(luh);
 
-        const hul = [{quantity: 1}, {quantity: 32}, {quantity: 33} ];
-        const hula = hul.reduce((previous, current) => (
-            previous.quantity + current.quantity
-        ))
-        console.log(hula)
+      const hul = [{ quantity: 1 }, { quantity: 32 }, { quantity: 33 }];
+      const hula = hul.reduce(
+        (previous, current) => previous.quantity + current.quantity
+      );
+      console.log(hula);
     }
-    
-  }, [form.tableItems])
+  }, [form.tableItems]);
   // Changes value of fields in the order details and state and calculates the fees
   function handleCalc(event) {
     const target = event.target;
     setForm({
       ...form,
-      orderDetails: { ...form.orderDetails, [target.name]: target.value },
+      orderDetails: { ...form.orderDetails, [target.name]: isNaN(parseFloat(target.value)) ? 0 : parseFloat(target.value) },
     });
-
-  
+    
   }
 
   function handleTableEntry(itemData) {
-
     setForm({ ...form, tableItems: [...form.tableItems, itemData] });
   }
 
