@@ -4,6 +4,7 @@ import "semantic-ui-css/semantic.min.css";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import LinkButton from "../components/LinkButton";
 
 function OrderCreation2(props) {
   return (
@@ -96,7 +97,7 @@ function OrderCreation2(props) {
         </div>
       </div>
       <form action="/orderCreation3" class="btn2">
-        <Button type="submit">Next</Button>
+      <LinkButton link={`3`} label="Continue"></LinkButton>
       </form>
     </div>
   );

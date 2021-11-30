@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
+import LinkButton from '../components/LinkButton';
 
 function MyVerticallyCenteredModal(props) {
   return (
@@ -235,7 +236,8 @@ let internationalNumberFormat = new Intl.NumberFormat('en-US')
 
         </div>
             <form action="/orderCreation5" class="btn4">
-                <Button type="submit">Next</Button>
+            <LinkButton link={`5`} label="Continue"></LinkButton>
+
             </form>
       
 

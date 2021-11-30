@@ -5,6 +5,7 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
+import LinkButton from "../components/LinkButton";
 
 function OrderCreation1(props) {
   return (
@@ -165,7 +166,10 @@ function OrderCreation1(props) {
       </div>
 
       <form action="/orderCreation2" class="btn1">
-        <Button type="submit">Next</Button>
+        {/*<NavLink to={`${url}/1`} activeClassName="nav-row-active">
+            Customer Information
+            </NavLink> */}
+        <LinkButton link={`2`} label="Continue"></LinkButton>
       </form>
     </div>
   );
