@@ -42,6 +42,11 @@ const OrderCreation = () => {
     shippingEmailAddress: "",
     shippingContactNumber: "",
     shippingPerson: "",
+    shippingMethod: "",
+    shippingVehicle: "",
+    shippingDate: "",
+    deliveryDate: "",
+    paymentChoice: "",
     tableItems: [],
     orderDetails: {
       discount: 0,
@@ -186,7 +191,7 @@ const OrderCreation = () => {
         </Route>
 
         <Route path={`${path}/5`}>
-          <OrderCreation5 fields={form} handleChange={handleChange} />
+          <OrderCreation5 fields={form} handleChange={handleChange} calc={calculations} />
         </Route>
       </Switch>
     </div>

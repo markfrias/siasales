@@ -28,7 +28,7 @@ function MyVerticallyCenteredModal(props) {
             
               <Form.Group className="mb-3" controlId="ItemNo">
                   <Form.Label><h4>Item Number:</h4></Form.Label>
-                  <Form.Control name="itemNumber" value={props.item.itemNumber} onChange={props.handleChange}  />
+                  <Form.Control name="itemId" value={props.item.itemId} onChange={props.handleChange}  />
               </Form.Group>
               <h4>
                 Item Name:
@@ -82,7 +82,7 @@ function MyVerticallyCenteredModal(props) {
 
 function OrderCreation4(props) {
   const initNewItem = {
-    itemNumber: "2233444",
+    itemId: "2233444",
     itemName: "Toyota Corolla 2019",
     itemDescription: "Manual transmission Toyota Coralla Altis 2019",
     quantity: "",
@@ -155,7 +155,7 @@ let internationalNumberFormat = new Intl.NumberFormat('en-US')
               {props.fields.tableItems.length > 0 ?
                 props.fields.tableItems.map(item => (
                   <tr key={item.itemId}>
-                  <td>{item.itemNumber}</td>
+                  <td>{item.itemId}</td>
                   <td>{item.itemName}</td>
                   <td>{item.itemDescription}</td>
                   <td>{item.quantity}</td>

@@ -72,6 +72,7 @@ function OrderCreation5(props) {
   const [modalShow, setModalShow] = React.useState(false);
   const [modalShow2, setModalShow2] = React.useState(false);
   const filler = "Fill this field up.";
+  let internationalNumberFormat = new Intl.NumberFormat("en-US");
 
   return (
     <div class="content1">
@@ -113,12 +114,16 @@ function OrderCreation5(props) {
             <div class="left5">
               <h5>Address:</h5>
               <div class="address-info5">
-                <p>{props.fields.streetAddress == ""
-                  ? filler
-                  : props.fields.streetAddress}</p>
-                <p>{(props.fields.city == ""
-                  ? filler
-                  : `${props.fields.city} ${props.fields.province} ${props.fields.postalCode}`) }</p>
+                <p>
+                  {props.fields.streetAddress == ""
+                    ? filler
+                    : props.fields.streetAddress}
+                </p>
+                <p>
+                  {props.fields.city == ""
+                    ? filler
+                    : `${props.fields.city} ${props.fields.province} ${props.fields.postalCode}`}
+                </p>
                 <p>Philippines</p>
               </div>
             </div>
@@ -127,23 +132,25 @@ function OrderCreation5(props) {
           <div class="details-right5">
             <div class="right5">
               <h5>Contact Number:</h5>
-              <p>{props.fields.contactNumber == ""
+              <p>
+                {props.fields.contactNumber == ""
                   ? filler
-                  : props.fields.contactNumber}</p>
+                  : props.fields.contactNumber}
+              </p>
             </div>
 
             <div class="right5">
               <h5>Email Address:</h5>
-              <p>{props.fields.email == ""
-                  ? filler
-                  : props.fields.email}</p>
+              <p>{props.fields.email == "" ? filler : props.fields.email}</p>
             </div>
 
             <div class="right5">
               <h5>Point of Contact:</h5>
-              <p>{props.fields.pointOfContact == ""
+              <p>
+                {props.fields.pointOfContact == ""
                   ? filler
-                  : props.fields.pointOfContact}</p>
+                  : props.fields.pointOfContact}
+              </p>
             </div>
           </div>
         </div>
@@ -153,12 +160,16 @@ function OrderCreation5(props) {
             <div class="left5">
               <h5>Billing Address:</h5>
               <div class="address-info5">
-                <p>{props.fields.billingStreetAddress == ""
-                  ? filler
-                  : props.fields.billingStreetAddress}</p>
-                <p>{(props.fields.billingCity == ""
-                  ? filler
-                  : `${props.fields.billingCity} ${props.fields.billingProvince} ${props.fields.billingPostalCode}`) }</p>
+                <p>
+                  {props.fields.billingStreetAddress == ""
+                    ? filler
+                    : props.fields.billingStreetAddress}
+                </p>
+                <p>
+                  {props.fields.billingCity == ""
+                    ? filler
+                    : `${props.fields.billingCity} ${props.fields.billingProvince} ${props.fields.billingPostalCode}`}
+                </p>
                 <p>Philippines</p>
               </div>
             </div>
@@ -167,9 +178,11 @@ function OrderCreation5(props) {
           <div class="details-right5">
             <div class="right5">
               <h5>Person/Department to Alert:</h5>
-              <p>{props.fields.billingPerson == ""
+              <p>
+                {props.fields.billingPerson == ""
                   ? filler
-                  : props.fields.billingPerson}</p>
+                  : props.fields.billingPerson}
+              </p>
             </div>
           </div>
         </div>
@@ -187,50 +200,49 @@ function OrderCreation5(props) {
             <div class="left5">
               <h5>Address:</h5>
               <div class="address-info5">
-                <p>{props.fields.shippingStreetAddress == ""
-                  ? filler
-                  : props.fields.shippingStreetAddress}</p>
-                <p>{(props.fields.shippingCity == ""
-                  ? filler
-                  : `${props.fields.shippingCity} ${props.fields.shippingProvince} ${props.fields.shippingPostalCode}`) }</p>
+                <p>
+                  {props.fields.shippingStreetAddress == ""
+                    ? filler
+                    : props.fields.shippingStreetAddress}
+                </p>
+                <p>
+                  {props.fields.shippingCity == ""
+                    ? filler
+                    : `${props.fields.shippingCity} ${props.fields.shippingProvince} ${props.fields.shippingPostalCode}`}
+                </p>
                 <p>Philippines</p>
               </div>
             </div>
 
             <div class="left5">
-              <h5>Contact Number:</h5>
-              <p>{props.fields.shippingContactNumber == ""
-                  ? filler
-                  : props.fields.shippingContactNumber}</p>
-            </div>
-
-            <div class="left5">
               <h5>Person/Department to Alert:</h5>
-              <p>{props.fields.shippingPerson == ""
+              <p>
+                {props.fields.shippingPerson == ""
                   ? filler
-                  : props.fields.shippingPerson}</p>
+                  : props.fields.shippingPerson}
+              </p>
             </div>
           </div>
 
           <div class="details-right5">
             <div class="right5">
               <h5>Ship via:</h5>
-              <p>FedEx</p>
+              <p>{props.fields.shippingVehicle}</p>
             </div>
 
             <div class="right5">
               <h5>Shipping Method:</h5>
-              <p>FedEx</p>
+              <p>{props.fields.shippingMethod}</p>
             </div>
 
             <div class="right5">
               <h5>Payment Choice:</h5>
-              <p>Cash</p>
+              <p>{props.fields.paymentChoice}</p>
             </div>
 
             <div class="right5">
               <h5>Delivery Date:</h5>
-              <p>January 15, 2022</p>
+              <p>{props.fields.deliveryDate}</p>
             </div>
           </div>
         </div>
@@ -254,30 +266,14 @@ function OrderCreation5(props) {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>0123456789</td>
-                <td>Toyota Philippines</td>
-                <td>2</td>
-                <td>Php 150,000</td>
-              </tr>
-              <tr>
-                <td>012345678</td>
-                <td>Toyota Philippines</td>
-                <td>55</td>
-                <td>Php 150,000</td>
-              </tr>
-              <tr>
-                <td>01234567</td>
-                <td>Toyota Philippines</td>
-                <td>777</td>
-                <td>Php 0</td>
-              </tr>
-              <tr>
-                <td>012345678</td>
-                <td>Toyota Philippines</td>
-                <td>251</td>
-                <td>Php 50,000</td>
-              </tr>
+              {props.fields.tableItems.map((item) => (
+                <tr key={item.itemId}>
+                  <td>{item.itemId}</td>
+                  <td>{item.itemName}</td>
+                  <td>{item.quantity}</td>
+                  <td>{item.quantity * item.unitPrice}</td>
+                </tr>
+              ))}
             </tbody>
           </Table>
         </div>
@@ -297,15 +293,52 @@ function OrderCreation5(props) {
           </div>
 
           <div class="cont-right5">
-            <h4>300,000</h4>
-            <h4>10,000</h4>
-            <h4>10,000</h4>
-            <h4>10,000</h4>
-            <h4>10,000</h4>
-            <h4>10,000</h4>
+            <h4>{internationalNumberFormat.format(props.calc.subtotal)}</h4>
+            <h4>
+              {props.fields.orderDetails.discount !== ""
+                ? internationalNumberFormat.format(
+                    parseFloat(props.fields.orderDetails.discount)
+                  )
+                : 0}
+            </h4>
+            <h4>
+              {internationalNumberFormat.format(
+                props.calc.subtotal - props.fields.orderDetails.discount
+              )}
+            </h4>
+            <h4>
+              {internationalNumberFormat.format(
+                (props.fields.orderDetails.taxRate / 100) *
+                  (props.calc.subtotal - props.fields.orderDetails.discount)
+              )}
+            </h4>
+            <h4>
+              {props.fields.orderDetails.shippingFee !== ""
+                ? internationalNumberFormat.format(
+                    parseFloat(props.fields.orderDetails.shippingFee)
+                  )
+                : 0}
+            </h4>
+            <h4>
+              {props.fields.orderDetails.otherFees !== ""
+                ? internationalNumberFormat.format(
+                    parseFloat(props.fields.orderDetails.otherFees)
+                  )
+                : 0}
+            </h4>
 
             <div class="total5">
-              <h4>PhP 350,000</h4>
+              <h4>
+                {internationalNumberFormat.format(
+                  props.calc.subtotal -
+                    props.fields.orderDetails.discount +
+                    ((props.fields.orderDetails.taxRate / 100) *
+                      (props.calc.subtotal -
+                        props.fields.orderDetails.discount) +
+                      props.fields.orderDetails.shippingFee +
+                      props.fields.orderDetails.otherFees)
+                )}
+              </h4>
             </div>
           </div>
         </div>
