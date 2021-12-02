@@ -5,20 +5,22 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { useRouteMatch } from "react-router";
+import { Link } from "react-router-dom";
 
 function MyVerticallyCenteredModal(props) {
   const [modalShow2, setModalShow2] = React.useState(false);
   return (
     <Modal
       {...props}
+
       size="sm-4"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header closeButton>
+      <Modal.Header>
         <Modal.Title id="contained-modal-title-vcenter">
           Submitting Sales Order
         </Modal.Title>
@@ -31,7 +33,7 @@ function MyVerticallyCenteredModal(props) {
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
-        <Button onClick={() => setModalShow2(true)}>Submit</Button>
+        <Button onClick={() => props.submit()}>Submit</Button>
       </Modal.Footer>
       <MyVerticallyCenteredModal2
         show={modalShow2}
@@ -44,12 +46,13 @@ function MyVerticallyCenteredModal(props) {
 function MyVerticallyCenteredModal2(props) {
   return (
     <Modal
+    backdrop="static"
       {...props}
       size="sm-4"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header closeButton>
+      <Modal.Header>
         <Modal.Title id="contained-modal-title-vcenter">
           Submitting Sales Order
         </Modal.Title>
@@ -63,7 +66,11 @@ function MyVerticallyCenteredModal2(props) {
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button href="/orderProcessing">Go to Order</Button>
+        { props.submissionStatus == "Success" ?
+        <Link to={`/orderProcessing${ typeof props.userObject.small === undefined? "/SalesGraph": "/" + props.userObject.small._id}`} className="btn btn-primary">Go to order</Link>
+        :
+        <Button>Go to order</Button>
+        }
       </Modal.Footer>
     </Modal>
   );
@@ -72,12 +79,45 @@ function MyVerticallyCenteredModal2(props) {
 function OrderCreation5(props) {
   const [modalShow, setModalShow] = React.useState(false);
   const [modalShow2, setModalShow2] = React.useState(false);
+  const [submissionStatus, setSubmissionStatus] = useState("Inactive");
+  const [userObject, setUserObject] = useState({small: {_id:"112eddf"}});
   const filler = "Fill this field up.";
   let internationalNumberFormat = new Intl.NumberFormat("en-US");
 
   useEffect(() => {
-    props.handleProgressChange(100)
-  }, [])
+    props.handleProgressChange(100);
+  }, []);
+
+  useEffect(() => {
+    console.log(submissionStatus)
+
+  })
+
+  useEffect(() => {
+    console.log(userObject)
+  },[userObject])
+
+  // Show modal 2 when submission status changes to Success
+  useEffect(() => {
+    if (submissionStatus == "Success") {
+      setModalShow2(true)
+      setModalShow(false)
+    }
+  }, [submissionStatus])
+
+  function getCustomers() {
+    fetch("/customers")
+      .then(data => data.json())
+      .then(data => console.log(data))
+  }
+
+  // Handles submit button action in the modal
+  async function handleSubmit() {
+    await props.handleOrderSubmission().then((data) => {(setSubmissionStatus(data.status));
+      setUserObject(data);
+    });
+    
+  }
 
   return (
     <div class="content1">
@@ -227,27 +267,43 @@ function OrderCreation5(props) {
                   : props.fields.shippingPerson}
               </p>
             </div>
+            <div class="left5">
+              <h5>Ship via:</h5>
+              <p>
+                {props.fields.shippingVehicle == ""
+                  ? filler
+                  : props.fields.shippingVehicle}
+              </p>
+            </div>
           </div>
 
           <div class="details-right5">
-            <div class="right5">
-              <h5>Ship via:</h5>
-              <p>{props.fields.shippingVehicle}</p>
-            </div>
 
             <div class="right5">
               <h5>Shipping Method:</h5>
-              <p>{props.fields.shippingMethod}</p>
+              <p>
+                {props.fields.shippingMethod == ""
+                  ? filler
+                  : props.fields.shippingMethod}
+              </p>
             </div>
 
             <div class="right5">
               <h5>Payment Choice:</h5>
-              <p>{props.fields.paymentChoice}</p>
+              <p>
+                {props.fields.paymentChoice == ""
+                  ? filler
+                  : props.fields.paymentChoice}
+              </p>
             </div>
 
             <div class="right5">
               <h5>Delivery Date:</h5>
-              <p>{props.fields.deliveryDate}</p>
+              <p>
+                {props.fields.deliveryDate == ""
+                  ? filler
+                  : props.fields.deliveryDate}
+              </p>
             </div>
           </div>
         </div>
@@ -350,17 +406,24 @@ function OrderCreation5(props) {
       </div>
 
       <form class="btn5">
-        <Button variant="primary" onClick={() => setModalShow(true)}>
+        <Button variant="primary" onClick={() => {
+          setModalShow(true);
+          getCustomers();
+          }}>
           Submit
         </Button>
 
         <MyVerticallyCenteredModal
           show={modalShow}
           onHide={() => setModalShow(false)}
+          submit = {handleSubmit}
+          submissionStatus = {setSubmissionStatus}
         />
         <MyVerticallyCenteredModal2
           show={modalShow2}
           onHide={() => setModalShow2(false)}
+          userObject = {userObject}
+          submissionStatus = {submissionStatus}
         />
       </form>
     </div>

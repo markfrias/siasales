@@ -17,10 +17,12 @@ const OrderCreation = () => {
   let { path, url } = useRouteMatch();
   const initialDate = new Date();
   const initialState = {
-    customerId: "",
+    customerId: "0000001",
     person: "",
     customerName: "",
     streetAddress: "",
+    salesPersonId: "0000001",
+    customerRepresentativeId: "0000001",
     province: "",
     city: "",
     postalCode: "",
@@ -55,6 +57,10 @@ const OrderCreation = () => {
       otherFees: 0,
     },
   };
+
+
+
+
   const [form, setForm] = useState(initialState);
 
   const initialCalculations = {
@@ -65,6 +71,32 @@ const OrderCreation = () => {
   };
   const [calculations, setCalculations] = useState(initialCalculations);
   const [progress, setProgress] = useState(20);
+
+  // Handle sales order submission
+  async function handleOrderSubmission() {
+    let order;
+    await submitOrder()
+    .then(data =>  order = data)
+    return order;
+  }
+
+
+  // Handles POST request to submit sales order to server
+async function submitOrder() {
+  const response = await fetch("/salesorder",{
+    method: 'POST',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(form)
+  } );
+  return response.json();
+
+
+}
+
+
 
   // Changes value of fields and the state based on changes in the field
   function handleChange(event) {
@@ -199,7 +231,7 @@ const OrderCreation = () => {
         </Route>
 
         <Route path={`${path}/5`}>
-          <OrderCreation5 fields={form} handleChange={handleChange} calc={calculations} handleProgressChange={() => handleProgressChange(100)} />
+          <OrderCreation5 fields={form} handleChange={handleChange} calc={calculations} handleProgressChange={() => handleProgressChange(100)} handleOrderSubmission={handleOrderSubmission} />
         </Route>
       </Switch>
     </div>

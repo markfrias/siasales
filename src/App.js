@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Registration1 from './registration/registration1'
 import Registration2 from './registration/registration2'
@@ -26,11 +26,12 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Login from './login/login';
+import Login from './login/Login';
 import OrderCreation from './OrderCreation/OrderCreation';
 
 
 function App() {
+  const [loginSuccess, setLoginSuccess] = useState(false)
   return (
     <div className="App">
           <Router>
@@ -94,7 +95,7 @@ function App() {
           <Route path="/orderDrafting" component={OrderDrafting} />
           <Route path="/order-creation" component={OrderCreation} />
 
-          <Route path="/login" component={Login}/>
+          <Route path="/login" render={(props) => <Login {...props} setLoginSuccess={setLoginSuccess} loginSuccess={loginSuccess} />} />
           <Route path="/customers" component={CustomerManagement} />
           <Route path="/SalesGraph" component={SalesGraph} />
           <Route path="/Sales" component={Sales} />
