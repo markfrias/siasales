@@ -26,47 +26,41 @@ function MyVerticallyCenteredModal(props) {
         <div class="modal-4">
           <div class="modal-left">
             
-              <Form.Group className="mb-3" controlId="ItemNo">
+              <Form.Group className="mb-3" controlId="itemid">
                   <Form.Label><h4>Item Number:</h4></Form.Label>
                   <Form.Control name="itemId" value={props.item.itemId} onChange={props.handleChange}  />
               </Form.Group>
-              <h4>
-                Item Name:
-              </h4>
-              <p>
-                {props.item.itemName}
-              </p>
+              <Form.Group className="mb-3" controlId="itemname">
+                  <Form.Label><h4>Item Name:</h4></Form.Label>
+                  <Form.Control name="itemName" value={props.item.itemName} onChange={props.handleChange}  />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="itemdesc">
+                  <Form.Label><h4>Item Description:</h4></Form.Label>
+                  <Form.Control name="itemDescription" value={props.item.itemDescription} onChange={props.handleChange}  />
+              </Form.Group>
 
-              <h4>
-                Item Description:
-              </h4>
-              <p>
-                {props.item.itemDescription}
-              </p>
 
-              <h4>
-                Unit Price:
-              </h4>
-              <p>
-                {props.item.unitPrice}
-              </p>
-            
+              <Form.Group className="mb-3" controlId="unitprice">
+                  <Form.Label><h4>Unit Price:</h4></Form.Label>
+                  <Form.Control name="unitPrice" value={props.item.unitPrice} onChange={props.handleChange}  />
+              </Form.Group>
+
+              
+
+              
           </div>
 
           <div class="modal-right">
-            
-              <Form.Group className="mb-3" controlId="Quantity">
-                  <Form.Label ><h4>Quantity:</h4></Form.Label>
-                  <Form.Control
-                  name="quantity" value={props.item.quantity} onChange={props.handleChange} type="number" />
+
+          <Form.Group className="mb-3" controlId="quant">
+                  <Form.Label><h4>Quantity:</h4></Form.Label>
+                  <Form.Control name="quantity" value={isNaN(props.item.quantity) ? "" : props.item.quantity} onChange={props.handleChange}  />
               </Form.Group>
 
-              <h4>
-                Unit Price:
-              </h4>
-              <p>
-                {props.item.unitPrice}
-              </p>
+              <h4>Total Price</h4>
+              <p>{isNaN(props.item.quantity) == false ? props.item.quantity * props.item.unitPrice : 0}</p>
+
+            
             
           </div>
         </div>
@@ -149,7 +143,7 @@ let internationalNumberFormat = new Intl.NumberFormat('en-US')
                 <th>Item Description</th>
                 <th>Quantity</th>
                 <th>Unit Price</th>
-                <th>Toral Price</th>
+                <th>Total Price</th>
               <th>Options</th>
               </tr>
             </thead>
