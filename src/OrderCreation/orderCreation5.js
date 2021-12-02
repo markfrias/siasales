@@ -5,8 +5,9 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
-import React from "react";
+import React, { useEffect } from "react";
 import Modal from "react-bootstrap/Modal";
+import { useRouteMatch } from "react-router";
 
 function MyVerticallyCenteredModal(props) {
   const [modalShow2, setModalShow2] = React.useState(false);
@@ -73,6 +74,10 @@ function OrderCreation5(props) {
   const [modalShow2, setModalShow2] = React.useState(false);
   const filler = "Fill this field up.";
   let internationalNumberFormat = new Intl.NumberFormat("en-US");
+
+  useEffect(() => {
+    props.handleProgressChange(100)
+  }, [])
 
   return (
     <div class="content1">

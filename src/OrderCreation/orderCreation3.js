@@ -5,8 +5,12 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import LinkButton from "../components/LinkButton";
+import { useEffect } from "react";
 
 function OrderCreation3(props) {
+  useEffect(() => {
+    props.handleProgressChange(60)
+  }, [])
   return (
     <div class="content1">
       <div class="ship-info3">

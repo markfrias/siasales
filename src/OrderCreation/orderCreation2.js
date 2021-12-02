@@ -5,8 +5,12 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import LinkButton from "../components/LinkButton";
+import { useEffect } from "react";
 
 function OrderCreation2(props) {
+  useEffect(() => {
+    props.handleProgressChange(40)
+  }, [])
   return (
     <div class="content1">
       <div class="bill-info2">

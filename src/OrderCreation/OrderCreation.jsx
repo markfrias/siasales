@@ -64,6 +64,7 @@ const OrderCreation = () => {
     total: 0,
   };
   const [calculations, setCalculations] = useState(initialCalculations);
+  const [progress, setProgress] = useState(20);
 
   // Changes value of fields and the state based on changes in the field
   function handleChange(event) {
@@ -73,6 +74,8 @@ const OrderCreation = () => {
 
     setForm({ ...form, [event.target.name]: event.target.value });
   }
+
+
 
   // Logs subtotal every time calculations is updated
   useEffect(() => {
@@ -133,6 +136,10 @@ const OrderCreation = () => {
     setForm({ ...form, tableItems: [...form.tableItems, itemData] });
   }
 
+  function handleProgressChange(progressChange) {
+    setProgress(progressChange)
+  }
+
   return (
     <div>
       <div class="content1">
@@ -163,21 +170,21 @@ const OrderCreation = () => {
           </NavLink>
         </div>
 
-        <ProgressBar animated now={20} />
+        <ProgressBar animated now={progress} />
       </div>
 
       <Switch>
         {console.log(path)}
         <Route exact path="/order-creation/1">
-          <OrderCreation1 fields={form} handleChange={handleChange} />
+          <OrderCreation1 fields={form} handleChange={handleChange} handleProgressChange={() => handleProgressChange(20)} />
         </Route>
 
         <Route path={`${path}/2`}>
-          <OrderCreation2 fields={form} handleChange={handleChange} />
+          <OrderCreation2 fields={form} handleChange={handleChange} handleProgressChange={() => handleProgressChange(40)} />
         </Route>
 
         <Route path={`${path}/3`}>
-          <OrderCreation3 fields={form} handleChange={handleChange} />
+          <OrderCreation3 fields={form} handleChange={handleChange} handleProgressChange={() => handleProgressChange(60)} />
         </Route>
 
         <Route path={`${path}/4`}>
@@ -187,11 +194,12 @@ const OrderCreation = () => {
             handleCalc={handleCalc}
             handleTableEntry={handleTableEntry}
             calc={calculations}
+            handleProgressChange={() => handleProgressChange(80)}
           />
         </Route>
 
         <Route path={`${path}/5`}>
-          <OrderCreation5 fields={form} handleChange={handleChange} calc={calculations} />
+          <OrderCreation5 fields={form} handleChange={handleChange} calc={calculations} handleProgressChange={() => handleProgressChange(100)} />
         </Route>
       </Switch>
     </div>

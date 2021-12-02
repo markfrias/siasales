@@ -4,10 +4,13 @@ import "semantic-ui-css/semantic.min.css";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LinkButton from "../components/LinkButton";
 
 function OrderCreation1(props) {
+  useEffect(() => {
+    props.handleProgressChange(20)
+  }, [])
   return (
     <div class="content1">
       <div class="note1">

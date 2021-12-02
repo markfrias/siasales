@@ -5,7 +5,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import LinkButton from '../components/LinkButton';
 
@@ -81,6 +81,9 @@ function MyVerticallyCenteredModal(props) {
 }
 
 function OrderCreation4(props) {
+  useEffect(() => {
+    props.handleProgressChange(80)
+  }, [])
   const initNewItem = {
     itemId: "2233444",
     itemName: "Toyota Corolla 2019",
