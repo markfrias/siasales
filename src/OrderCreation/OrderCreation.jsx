@@ -5,17 +5,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "semantic-ui-css/semantic.min.css";
 import { NavLink, useRouteMatch } from "react-router-dom";
 import OrderCreation1 from "./OrderCreation1";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import orderCreation2 from "./OrderCreation2";
+import { Switch, Route } from "react-router-dom";
 import OrderCreation2 from "./OrderCreation2";
 import OrderCreation3 from "./OrderCreation3";
 import OrderCreation4 from "./OrderCreation4";
 import OrderCreation5 from "./OrderCreation5";
-import { unstable_concurrentAct } from "react-dom/test-utils";
 
 const OrderCreation = () => {
   let { path, url } = useRouteMatch();
-  const initialDate = new Date();
   const initialState = {
     customerId: "0000001",
     person: "",
@@ -30,7 +27,6 @@ const OrderCreation = () => {
     email: "",
     pointOfContact: "",
     submissionDate: "",
-    billingStreetAddress: "",
     billingProvince: "",
     billingCity: "",
     billingPostalCode: "",
@@ -100,10 +96,6 @@ async function submitOrder() {
 
   // Changes value of fields and the state based on changes in the field
   function handleChange(event) {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
-
     setForm({ ...form, [event.target.name]: event.target.value });
   }
 
@@ -136,7 +128,6 @@ async function submitOrder() {
         total: calculations.subtotalLessDiscount + calculations.totalTax + form.orderDetails.shippingFee + form.orderDetails.otherFees
       });
 
-      let subtotal = 0;
       form.tableItems.forEach((element) => {
         console.log(element.quantity);
       });

@@ -58,7 +58,7 @@ function App() {
 
            
             
-            <Link to="/orderProcessing">
+            <Link to="/orderProcessing/:id">
               <li>orderProcessing</li>
             </Link>
             <Link to="/orderCompleted">
@@ -89,7 +89,7 @@ function App() {
           <Route path="/orderCreation3" component={OrderCreation3} />
           <Route path="/orderCreation4" component={OrderCreation4} />
           <Route path="/orderCreation5" component={OrderCreation5} />
-          <Route path="/orderProcessing" component={OrderProcessing} />
+          <Route path="/orderProcessing/:id" component={OrderProcessing} />
           <Route path="/orderCompleted" component={OrderCompleted} />
           <Route path="/orderRejected" component={OrderRejected} />
           <Route path="/orderDrafting" component={OrderDrafting} />
