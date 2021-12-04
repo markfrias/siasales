@@ -21,19 +21,19 @@
 .sidebarList {
     list-style: none;
     padding: 15px;
+    margin-top: 55px;
 
 }
 .sidebarListItem {
-    padding-left: 35px;
-    padding-top: 25px;
+    padding: 15px;
     display: flex;
     align-items: center;
     font-size:'Comfortaa' ;
     width: 250px;
     
 }
-li:hover {
-    width: 200px;
+.sidebarListItem:hover {
+   padding: 15px;
     background-color: #81D8D0;
    
     
@@ -51,33 +51,6 @@ li:hover {
     width: 250px;
 
 }
-/* .bg-light { 
-    
-    height: 100vh;
-    width: 300px;
-    margin: 0;
-
+.account-button {
+    background-color: bisque;
 }
-ul{
-    padding-top: 65%;
-    position: sticky;
-}
-li {
-    padding: 80px;
-    display: flex;
-
-    align-items: center;
-    font-family:'Comfortaa';
-    width: 300px;
-}
-a {
-    font-size: 15px;
-    text-align:  start;
-    flex: 10px;
-
-    
-    
-}
-li:hover {
-    background-color: #81D8D0;
-}*/

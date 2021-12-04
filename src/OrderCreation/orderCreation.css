@@ -1,5 +1,7 @@
 body {
     font-family:  'Open Sans', 'Helvetica Neue', sans-serif, 'Comfortaa';
+
+
 }
 
 
@@ -7,7 +9,10 @@ body {
 /**orderCreation1******************************************************/
 
 .content1 {
+    margin-left: 50px;
     padding: 40px;
+    width: 100%;
+    height: 100vh;
 }
 
 .content1 Button {
@@ -320,7 +325,10 @@ body {
 /**orderCreation4******************************************************/
 
 .content4 {
-    padding: 40px;
+    margin:0;
+    padding: 20px;
+    width: 100%;
+    height: 100vh;
 }
 
 .content4 Button {

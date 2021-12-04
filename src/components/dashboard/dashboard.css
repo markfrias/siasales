@@ -1,5 +1,7 @@
+/* Dashboard CSS Styles */
 .dashboard {
     height: 100%;
+    width: 90%;
 }
 
 
@@ -14,4 +16,24 @@
     width: 100%;
     margin: 25px;
     
+}
+/*Dashboard Info Css Stles */
+.featured {
+    margin: 55px;;
+    width: 100%;
+    display: flex;
+   justify-content: space-evenly;
+ 
+}
+.featuredItem {
+    flex:  1;
+    margin: 0;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;  
+    
+    
+}
+#icon {
+    font-size: 15px;
 }

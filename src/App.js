@@ -24,16 +24,30 @@ import Login from './login/login';
 import Dashboard from './components/dashboard/Dashboard';
 import SideMenu from './components/SideBar/SideMenu';
 import DashboardGraph from './components/dashboard/DashboardGraph';
+import DashboardInfo from './components/dashboard/DashboardInfo';
 
 
 function App() {
   return ( 
-
+<Router>
     <div className="container">
       <SideMenu />
-     <DashboardGraph />
+      <Switch>
+      
+      <Route path="/dashboard" component={Dashboard} />
+      <Route path="/customer" component={CustomerManagement} />
+      <Route path="/sales" component={OrderCreation1} />
+      <Route path="/orderCreation2" component={OrderCreation2} />
+      <Route path="/orderCreation3" component={OrderCreation3} />
+      <Route path="/orderCreation4" component={OrderCreation4} />
+      <Route path="/orderCreation5" component={OrderCreation5} />
+      <Route path="/orderProcessing" component={OrderProcessing} />
+      <Route path="/orderCompleted" component={OrderCompleted} />
+      <Route component={Login} />
+      </Switch>
+  
     </div>
-
+</Router>
 /*  <Router>
     <SideMenu />
     <Switch>
