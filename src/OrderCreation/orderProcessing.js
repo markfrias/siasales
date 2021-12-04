@@ -182,8 +182,15 @@ async function changeStatus(status) {
 
   // Close modal if submit is succcess and then update status in frontend
   useEffect(() => {
-    setModalShow(false);
+    if (submitStatus == "Success") {
+      setModalShow(false);
+
+      window.location.reload(true)
+
+    }
+
     // Add code to reload
+
   }, [submitStatus])
   useEffect(() => {
     console.log(id);
