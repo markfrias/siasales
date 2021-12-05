@@ -17,11 +17,28 @@ import {
   useRouteMatch,
 } from "react-router-dom";
 import Registration1 from "./Registration1";
+import Registration2 from "./Registration2";
+import Registration3 from "./Registration3";
+import Registration4 from "./Registration4";
 
 function Registration() {
   let { path, url } = useRouteMatch();
+  const initialState = {
+      userName: "",
+      password: "",
+      password2: "",
+      firstName: "",
+      lastName: "",
+      phoneNumber: "",
+      companyId: ""
+  }
 
+  const [formData, setFormData] = useState(initialState);
   const [validated, setValidated] = useState(false);
+
+  const handleChange = (event) => {
+      setFormData({ ...formData, [event.target.name]: event.target.value });
+  }
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -45,13 +62,20 @@ function Registration() {
         <div class="image"></div>
       </div>
 
-       <Switch>
-          <Route path={`${path}/:1`}>
-            <Registration1></Registration1>
-          </Route>
-        </Switch>
-
-
+      <Switch>
+        <Route path={`${path}/1`}>
+          <Registration1 formData={formData} handleChange={handleChange}></Registration1>
+        </Route>
+        <Route path={`${path}/2`}>
+          <Registration2 formData={formData} handleChange={handleChange}></Registration2>
+        </Route>
+        <Route path={`${path}/3`}>
+          <Registration3 formData={formData} handleChange={handleChange}></Registration3>
+        </Route>
+        <Route path={`${path}/4`}>
+          <Registration4 formData={formData} handleChange={handleChange}></Registration4>
+        </Route>
+      </Switch>
     </div>
   );
 }

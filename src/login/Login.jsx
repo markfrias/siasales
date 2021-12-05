@@ -77,7 +77,7 @@ if (!props.loginSuccess) {
             </Button>
           </Form>
           
-            <Link to="/registration" className="create-new-account text-right">
+            <Link to="/registration/1" className="create-new-account text-right">
               Don't have account yet? Create a new account here
             </Link>
         </div>
