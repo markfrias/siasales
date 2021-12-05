@@ -88,8 +88,6 @@ async function submitOrder() {
     body: JSON.stringify(form)
   } );
   return response.json();
-
-
 }
 
 

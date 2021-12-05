@@ -24,20 +24,40 @@ import Registration4 from "./Registration4";
 function Registration() {
   let { path, url } = useRouteMatch();
   const initialState = {
-      userName: "",
-      password: "",
-      password2: "",
-      firstName: "",
-      lastName: "",
-      phoneNumber: "",
-      companyId: ""
-  }
+    userName: "",
+    password: "",
+    password2: "",
+    firstName: "",
+    lastName: "",
+    phoneNumber: "",
+    companyId: "",
+  };
 
   const [formData, setFormData] = useState(initialState);
   const [validated, setValidated] = useState(false);
 
   const handleChange = (event) => {
-      setFormData({ ...formData, [event.target.name]: event.target.value });
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+  };
+
+  // Handle sales order submission
+  async function handleOrderSubmission() {
+    let order;
+    await submitOrder().then((data) => (order = data));
+    return order;
+  }
+
+  // Handles POST request to submit sales order to server
+  async function submitOrder() {
+    const response = await fetch("/users/register", {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+    return response.json();
   }
 
   const handleSubmit = (event) => {
@@ -64,16 +84,30 @@ function Registration() {
 
       <Switch>
         <Route path={`${path}/1`}>
-          <Registration1 formData={formData} handleChange={handleChange}></Registration1>
+          <Registration1
+            formData={formData}
+            handleChange={handleChange}
+          ></Registration1>
         </Route>
         <Route path={`${path}/2`}>
-          <Registration2 formData={formData} handleChange={handleChange}></Registration2>
+          <Registration2
+            formData={formData}
+            handleChange={handleChange}
+          ></Registration2>
         </Route>
         <Route path={`${path}/3`}>
-          <Registration3 formData={formData} handleChange={handleChange}></Registration3>
+          <Registration3
+            formData={formData}
+            handleChange={handleChange}
+            handleOrderSubmission={handleOrderSubmission}
+
+          ></Registration3>
         </Route>
         <Route path={`${path}/4`}>
-          <Registration4 formData={formData} handleChange={handleChange}></Registration4>
+          <Registration4
+            formData={formData}
+            handleChange={handleChange}
+          ></Registration4>
         </Route>
       </Switch>
     </div>
