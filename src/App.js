@@ -17,7 +17,7 @@ import OrderCreation5 from './OrderCreation/OrderCreation5'
 import OrderProcessing from './OrderCreation/orderProcessing'
 import OrderCompleted from './OrderCreation/orderCompleted'
 import OrderRejected from './OrderCreation/orderRejected'
-import OrderDrafting from './OrderCreation/orderDrafting'
+import OrderDrafting from './OrderCreation/OrderDrafting'
 
 
 import {
