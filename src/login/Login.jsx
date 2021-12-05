@@ -4,9 +4,6 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import {FormControl, FormGroup, FormLabel, FormText, Form, FormCheck, Button, Spinner} from 'react-bootstrap';
 import { Redirect } from 'react-router-dom';
-import Registration1 from '../registration/registration1';
-
-
 
 
 const Login = (props) => {
@@ -80,7 +77,7 @@ if (!props.loginSuccess) {
             </Button>
           </Form>
           
-            <Link to="/registration1" className="create-new-account text-right">
+            <Link to="/registration" className="create-new-account text-right">
               Don't have account yet? Create a new account here
             </Link>
         </div>

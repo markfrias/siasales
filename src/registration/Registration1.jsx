@@ -32,10 +32,6 @@ function Registration1() {
   };
 
   return (
-   
-
-      <div class="row pageContainer">
-        
 
         <div class="register">
           <div class="r1-register">
@@ -95,7 +91,7 @@ function Registration1() {
             
           </div>
         </div>
-      </div>
+ 
 
   );
 }

@@ -1,26 +1,25 @@
-import './registration.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import ProgressBar from 'react-bootstrap/ProgressBar';
-import InputGroup from 'react-bootstrap/Form';
-import setValidated  from 'react-bootstrap/Form';
-import validated from 'react-bootstrap/Form';
-import LinkButton from '../components/LinkButton';
-import React, {useState} from 'react';
+import "./registration.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import ProgressBar from "react-bootstrap/ProgressBar";
+import InputGroup from "react-bootstrap/Form";
+import setValidated from "react-bootstrap/Form";
+import validated from "react-bootstrap/Form";
+import LinkButton from "../components/LinkButton";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
   useParams,
-  useRouteMatch
-  
+  useRouteMatch,
 } from "react-router-dom";
-
+import Registration1 from "./Registration1";
 
 function Registration() {
-    let { path, url } = useRouteMatch();
+  let { path, url } = useRouteMatch();
 
   const [validated, setValidated] = useState(false);
 
@@ -35,29 +34,25 @@ function Registration() {
   };
 
   return (
-   
-
-      <div class="row pageContainer">
-        <div class="title-image">
-          <div class="title">
-              <div class="r1-text">
-                <h1>wilbur</h1>
-                <p>Sales Information System</p>
-              </div>
+    <div class="row pageContainer">
+      <div class="title-image">
+        <div class="title">
+          <div class="r1-text">
+            <h1>wilbur</h1>
+            <p>Sales Information System</p>
           </div>
-          <div class="image">
-
-            </div>
         </div>
-
-        <Switch>
-            <Route path={`${path}/:1`} /> 
-        </Switch>
-
-       
-        
+        <div class="image"></div>
       </div>
 
+       <Switch>
+          <Route path={`${path}/:1`}>
+            <Registration1></Registration1>
+          </Route>
+        </Switch>
+
+
+    </div>
   );
 }
 
