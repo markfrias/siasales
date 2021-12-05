@@ -1,272 +1,269 @@
 body {
-    font-family:  'Open Sans', 'Helvetica Neue', sans-serif, 'Comfortaa', cursive;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif, "Comfortaa", cursive;
 }
 
-
-.row{
-    display: flex;
-    flex-direction: row;
-    max-width: 100%;
+.row {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
 }
 
 .pageContainer {
-    height: 100vh;
+  height: 100vh;
+}
+
+.right-side {
+  width: auto;
 }
 
 .title-image {
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    background-image: url("./images/sale.jpg");
-    padding: 0;
-    background-size: auto;
-    background-repeat: no-repeat;
-    background-position: 25%;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  background-image: url("./images/sale.jpg");
+  padding: 0;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: 25%;
 }
 
 .title {
-    background-color: hsl(178, 90%, 38%);
+  background-color: hsl(178, 90%, 38%);
 }
 
 .register {
-    width: 60%;
+  width: 60%;
 }
 
 /**Register1******************************************************/
 .r1-text {
-    font-family: 'Comfortaa', cursive;
-    font-size: 30px;
-    text-align:right;
-    padding: 150px 50px 0px 0px;
+  font-family: "Comfortaa", cursive;
+  font-size: 30px;
+  text-align: right;
+  padding: 150px 50px 0px 0px;
 }
 
 .r1-text h1 {
-    font-family: 'Comfortaa', cursive;
+  font-family: "Comfortaa", cursive;
 }
 
 .r1-progress {
-    padding: 10px 0px 0px 10xp;
+  padding: 10px 0px 0px 10xp;
 }
 
 .r1-account {
-    padding: 30px 0px 30px 0px;
+  padding: 30px 0px 30px 0px;
 }
 
-.r1-account Button{
-    padding-left: 0px;
+.r1-account Button {
+  padding-left: 0px;
 }
 
 .r1-register {
-    padding: 100px 50px 100px 50px;
-    width: 100%;
+  padding: 100px 50px 100px 50px;
+  width: 100%;
 }
 
 .r1-username {
-    padding: 12px 0px 12px 0px;
+  padding: 12px 0px 12px 0px;
 }
 
 .r1-password {
-    padding: 12px 0px 12px 0px;
+  padding: 12px 0px 12px 0px;
 }
 
 .r1-checkbox {
-    padding: 20px 0px 0px 0px;
+  padding: 20px 0px 0px 0px;
 }
 .r1-btn {
-    text-align: right;
+  text-align: right;
 }
 
-.r1-btn Button{
-    border-radius: 5px;
-    padding: 5px 20px 5px 20px;
-    color: #fff;
-    background-color: #0A67BA;
-    border-color: #0A67BA;
+.r1-btn Button {
+  border-radius: 5px;
+  padding: 5px 20px 5px 20px;
+  color: #fff;
+  background-color: #0a67ba;
+  border-color: #0a67ba;
 }
 
 /* Styling for form labels */
 .form-label {
-    font-weight: bold;
-    color: rgba(0, 0, 0, .8)
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.8);
 }
-
-
 
 /**Register2******************************************************/
 .r2-text {
-    font-family: 'Comfortaa', cursive;
-    font-size: 30px;
-    text-align:right;
-    padding: 150px 50px 0px 0px;
+  font-family: "Comfortaa", cursive;
+  font-size: 30px;
+  text-align: right;
+  padding: 150px 50px 0px 0px;
 }
 
 .r2-text h1 {
-    font-family: 'Comfortaa', cursive;
+  font-family: "Comfortaa", cursive;
 }
 
 .r2-progress {
-    padding: 10px 0px 0px 10xp;
+  padding: 10px 0px 0px 10xp;
 }
 
 .r2-account {
-    padding: 30px 0px 30px 0px;
+  padding: 30px 0px 30px 0px;
 }
 
 .r2-register {
-    padding: 90px 50px 40px 50px;
-    width: 100%;
+  padding: 90px 50px 40px 50px;
+  width: 100%;
 }
 
 .r2-firstname {
-    padding: 0px 0px 12px 0px;
+  padding: 0px 0px 12px 0px;
 }
 
 .r2-lastname {
-    padding: 12px 0px 12px 0px;
+  padding: 12px 0px 12px 0px;
 }
 
 .r2-btnLink {
-    padding: 20px 0px 0px 0px;
+  padding: 20px 0px 0px 0px;
 }
 
 .r2-btnLink Button {
-    padding-left: 0px;
+  padding-left: 0px;
 }
 
 .r2-btn {
-    display: flex;
-    padding: 0px;
-    justify-content: flex-end;
+  display: flex;
+  padding: 0px;
+  justify-content: flex-end;
 }
 .r2-btn .back {
-    padding: 10px;
+  padding: 10px;
 }
 .r2-btn .continue {
-    padding: 10px;
-
+  padding: 10px;
 }
 
-.r2-btn Button{
-    border-radius: 5px;
-    padding: 5px 20px 5px 20px;
+.r2-btn Button {
+  border-radius: 5px;
+  padding: 5px 20px 5px 20px;
 }
 
 /**Register3******************************************************/
 .r3-text {
-    font-size: 30px;
-    text-align:right;
-    padding: 150px 50px 0px 0px;
-    font-family: 'Comfortaa', cursive;
+  font-size: 30px;
+  text-align: right;
+  padding: 150px 50px 0px 0px;
+  font-family: "Comfortaa", cursive;
 }
 
 .r3-text h1 {
-    font-family: 'Comfortaa', cursive;
+  font-family: "Comfortaa", cursive;
 }
 
 .r3-progress {
-    padding: 10px 0px 0px 10xp;
+  padding: 10px 0px 0px 10xp;
 }
 
 .r3-account {
-    padding: 30px 0px 30px 0px;
+  padding: 30px 0px 30px 0px;
 }
 
 .r3-register {
-    padding: 100px 50px 40px 50px;
-    width: 100%;
+  padding: 100px 50px 40px 50px;
+  width: 100%;
 }
 
 .r3-phone {
-    padding: 0px 0px 12px 0px;
+  padding: 0px 0px 12px 0px;
 }
 
 .r3-company {
-    padding: 12px 0px 12px 0px;
+  padding: 12px 0px 12px 0px;
 }
 
 .r3-btnLink {
-    padding: 20px 0px 0px 0px;
+  padding: 20px 0px 0px 0px;
 }
 
 .r3-btnLink Button {
-    padding: 0px;
+  padding: 0px;
 }
 
 .r3-btn {
-    display: flex;
-    padding: 0px;
-    justify-content: flex-end;
+  display: flex;
+  padding: 0px;
+  justify-content: flex-end;
 }
 .r3-btn .back {
-    padding: 10px;
+  padding: 10px;
 }
 .r3-btn .continue {
-    padding: 10px;
+  padding: 10px;
 }
 
-.r3-btn Button{
-    border-radius: 5px;
-    padding: 5px 20px 5px 20px;
+.r3-btn Button {
+  border-radius: 5px;
+  padding: 5px 20px 5px 20px;
 }
-
 
 /**Register4******************************************************/
 .r4-text {
-    font-size: 30px;
-    text-align:right;
-    padding: 150px 50px 0px 0px;
-    font-family: 'Comfortaa', cursive;
+  font-size: 30px;
+  text-align: right;
+  padding: 150px 50px 0px 0px;
+  font-family: "Comfortaa", cursive;
 }
 
 .r4-text h1 {
-    font-family: 'Comfortaa', cursive;
+  font-family: "Comfortaa", cursive;
 }
 
 .r4-progress {
-    padding: 10px 0px 0px 10xp;
+  padding: 10px 0px 0px 10xp;
 }
 
 .r4-account {
-    padding: 40px 0px 40px 0px;
+  padding: 40px 0px 40px 0px;
 }
 
 .r4-register {
-    padding: 200px 50px 200px 50px;
-    width: 100%;
+  padding: 200px 50px 200px 50px;
+  width: 100%;
 }
 
 .r4-btn {
-    text-align: right;
+  text-align: right;
 }
 
-.r4-btn Button{
-    border-radius: 5px;
-    padding: 5px 20px 5px 20px;
-    color: #fff;
-    background-color: #0A67BA;
-    border-color: #0A67BA;
+.r4-btn Button {
+  border-radius: 5px;
+  padding: 5px 20px 5px 20px;
+  color: #fff;
+  background-color: #0a67ba;
+  border-color: #0a67ba;
 }
-
 
 /* Styling for buttons -- transfer to assets later */
 .btn-primary {
-    background-color: #0A67BACC;
-    border-color: #0A67BACC;
-    font-weight: bold;
-    color: black;
-    border-radius: 5px;
+  background-color: #0a67bacc;
+  border-color: #0a67bacc;
+  font-weight: bold;
+  color: black;
+  border-radius: 5px;
 }
 
 .button-group {
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
 }
-
 
 /* Styling for registration parts */
 .reg-note {
-    font-size: 1.25rem;
-    color: #000000CC;
-    width: 25rem;
+  font-size: 1.25rem;
+  color: #000000cc;
+  width: 25rem;
 }

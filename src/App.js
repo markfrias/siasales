@@ -28,6 +28,7 @@ import {
 } from "react-router-dom";
 import Login from './login/Login';
 import OrderCreation from './OrderCreation/OrderCreation';
+import Registration from './registration/Registration';
 
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
           <Router>
       <nav>
           <ul>
-            <Link to="/registration1">
+            <Link to="/registration">
               <li>1</li>
             </Link>
             <Link to="/registration2">
@@ -79,10 +80,12 @@ function App() {
       </nav>
 
         <Switch>
+          
           <Route path="/registration1" component={Registration1} />
           <Route path="/registration2" component={Registration2} />
           <Route path="/registration3" component={Registration3} />
           <Route path="/registration4" component={Registration4} />
+          <Route path="/registration" component={Registration} />
 
           <Route path="/orderCreation1" component={OrderCreation1} />
           <Route path="/orderCreation2" component={OrderCreation2} />

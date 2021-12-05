@@ -32,20 +32,10 @@ function Registration1() {
   };
 
   return (
-    <Form noValidate validated={validated} onSubmit={handleSubmit}>
+   
 
       <div class="row pageContainer">
-        <div class="title-image">
-          <div class="title">
-              <div class="r1-text">
-                <h1>wilbur</h1>
-                <p>Sales Information System</p>
-              </div>
-          </div>
-          <div class="image">
-
-            </div>
-        </div>
+        
 
         <div class="register">
           <div class="r1-register">
@@ -106,7 +96,6 @@ function Registration1() {
           </div>
         </div>
       </div>
-    </Form>
 
   );
 }
