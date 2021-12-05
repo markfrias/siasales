@@ -31,7 +31,7 @@ function Registration1(props) {
         </div>
         <div class="r1-account">
           <h1>Create your account</h1>
-          <Link to="Login">Already have an account? Sign in here instead.</Link>
+          <Link to="/login">Already have an account? Sign in here instead.</Link>
         </div>
 
         <div class="r1-username">

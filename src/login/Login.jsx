@@ -4,9 +4,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import {FormControl, FormGroup, FormLabel, FormText, Form, FormCheck, Button, Spinner} from 'react-bootstrap';
 import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router';
 
 
 const Login = (props) => {
+  const history = useHistory();
 
   const [credentials, setCredentials] = useState({userName: "", password: ""});
   const [loginLoading, setLoginLoading] = useState(false);
@@ -98,7 +100,8 @@ if (!props.loginSuccess) {
     </div>
 );
 } else {
-  return <Redirect to="/SalesGraph" />
+  history.push("/dashboard")
+  return(<h1> Logged in</h1>)
 }
   
 }

@@ -2,6 +2,10 @@ body {
   font-family: "Open Sans", "Helvetica Neue", sans-serif, "Comfortaa";
 }
 
+.oc-container {
+  width: 100%;
+}
+
 /**orderCreation1******************************************************/
 
 .content1 {
@@ -11,6 +15,11 @@ body {
 .content1 Button {
   color: black;
   padding: 0px 0px 10px 5px;
+}
+
+.back1 {
+  align-items: flex-end;
+  font-size: 1rem;
 }
 
 .back1 .angle {

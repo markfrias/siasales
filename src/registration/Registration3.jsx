@@ -86,7 +86,7 @@ function Registration3(props) {
 
           <div class="r3-btnLink">
             <Form.Group>
-              <Link to="Login">
+              <Link to="/login">
                 Already have an account? Sign in here instead.
               </Link>
             </Form.Group>

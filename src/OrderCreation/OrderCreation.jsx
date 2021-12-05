@@ -3,14 +3,13 @@ import { Button, ProgressBar } from "react-bootstrap";
 import "./orderCreation.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "semantic-ui-css/semantic.min.css";
-import { NavLink, useRouteMatch } from "react-router-dom";
+import { Link, NavLink, useRouteMatch } from "react-router-dom";
 import OrderCreation1 from "./OrderCreation1";
 import { Switch, Route } from "react-router-dom";
 import OrderCreation2 from "./OrderCreation2";
 import OrderCreation3 from "./OrderCreation3";
 import OrderCreation4 from "./OrderCreation4";
 import OrderCreation5 from "./OrderCreation5";
-
 const OrderCreation = () => {
   let { path, url } = useRouteMatch();
   const initialState = {
@@ -162,13 +161,13 @@ async function submitOrder() {
   }
 
   return (
-    <div>
+    <div class="oc-container">
       <div class="content1">
         <div class="back1">
           <i class="angle left icon"></i>
-          <Button variant="link" href="/App">
-            Back to sales Order
-          </Button>
+          <Link to="/order-creation/1">
+            Back to Sales Order
+          </Link>
         </div>
         <div class="title1">
           <h1>Create a new sales order</h1>

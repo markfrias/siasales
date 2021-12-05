@@ -19,23 +19,31 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Login from "./login/Login";
 import OrderCreation from "./OrderCreation/OrderCreation";
 import Registration from "./registration/Registration";
+import SideBar from "./components/SideMenu/SideMenu";
+import { useRouteMatch } from "react-router";
+import { useEffect } from "react";
+import Dashboard from "./components/dashboard/Dashboard";
 
 function App() {
   const [loginSuccess, setLoginSuccess] = useState(false);
+  let { path, url } = useRouteMatch();
+  
+
+
   return (
     <div className="App">
+      {console.log(window.location.href)}
       <Router>
+      {[window.location.href == "http://localhost:3000/" || window.location.href == "http://localhost:3000/login" || window.location.href == "http://localhost:3000/registration/1" ? "" : <SideBar/>]}
+
         
 
         <Switch>
           
           <Route path="/registration" component={Registration} />
+          <Route path='/dashboard' component={Dashboard} />
 
-          <Route path="/orderCreation1" component={OrderCreation1} />
-          <Route path="/orderCreation2" component={OrderCreation2} />
-          <Route path="/orderCreation3" component={OrderCreation3} />
-          <Route path="/orderCreation4" component={OrderCreation4} />
-          <Route path="/orderCreation5" component={OrderCreation5} />
+         
           <Route path="/orderProcessing/:id" component={OrderProcessing} />
           <Route path="/orderCompleted" component={OrderCompleted} />
           <Route path="/orderRejected" component={OrderRejected} />
@@ -54,7 +62,7 @@ function App() {
           />
           <Route path="/customers" component={CustomerManagement} />
           <Route path="/SalesGraph" component={SalesGraph} />
-          <Route path="/Sales" component={Sales} />
+          <Route path="/Sales" component={SalesGraph} />
           <Route
             path=""
             render={(props) => (

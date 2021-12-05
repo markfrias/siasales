@@ -75,7 +75,7 @@ function Registration2(props) {
 
         <div class="r2-btnLink">
           <Form.Group className="mb-3">
-            <Link to="Login">
+            <Link to="/login">
               Already have an account? Sign in here instead.
             </Link>
           </Form.Group>
