@@ -7,24 +7,19 @@ const SalesOrder = () => {
     
     const customer = {
         _id: "0123456789",
-        name: "Toyota Philippines",
-        type: "Shipping Service",
-        address: "51 MaryLand Street Apartment City Los Angeles, CA",
-        dateAdded: "01/05/2021",
-        emailAddress: "harrison@atlas.com",
-        totalSales: "50k",
-        lastTransaction: "01/07/2021"
+        customerRepresentativeId: "Toyota Philippines",
+        processingStatus: "Processing",
+        createdAt: "10-12-20",
+        contact:"harrison@atlas.com",
+        details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     }
     const customer_2 = {
-        id: "0123456789",
-        name: "Toyota Philippines",
-        type: "Product",
-        address: "51 MaryLand Street Apartment City Los Angeles, CA",
-        dateAdded: "01/05/2021",
-        emailAddress: "harrison@atlas.com",
-        totalSales: "50k",
-        lastTransaction: "01/07/2021"
-    }
+        _id: "895462017",
+        customerRepresentativeId: "Hyundai Philippines",
+        processingStatus: "Processing",
+        createdAt: "06-23-21",
+        contact:"harrison@atlas.com",
+        details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit" }
   
     
 
@@ -36,7 +31,7 @@ const SalesOrder = () => {
     useEffect(() => {
         let productCustomers, shippingCustomers;
         let customerArray = [];
-        fetch('http://localhost:8000/salesOrder/')
+        fetch('http://localhost:8000/sales-order/')
             .then(response => response.json())
             .then(data => productCustomers = data)
 
@@ -82,7 +77,7 @@ const SalesOrder = () => {
             <p></p>
             <div className="row mt-3">
                 <div className="col-md-6">
-                    <h2 className="f-openSans">Customer Management</h2>
+                    <h2 className="f-openSans">Sales Order</h2>
                     <p>Last updated December 2, 2021 5:30 PM</p>
                     
                     <div className="row mt-3 ">
@@ -119,37 +114,14 @@ const SalesOrder = () => {
                     {customers.map((cust, index) => (
                         console.log(cust),
                         <tr key={index}>
-                            <td>{cust._id  }</td>
-                            <td>{
-                            cust.customerRepresentativeId === undefined ?
-                            `${cust.first_name} ${cust.last_name}`
-                            :
-                            cust.customerRepresentativeId
-                        }</td>
-                         <td>
-                                {cust.status     == "Product" ? (
-                                    <p className="border border rounded-pill text-center p-2">
-                                        {cust.status    }
-                                    </p>
-                                ) : (
-
-                                    <p className="border-primary border rounded-pill text-center text-primary">
-                                        {cust.processingStatus   }
-                                    </p>
-                                )}
-                            </td>
-
-                            <td>{cust.address !== undefined ?
-                                `${cust.address.barangay}, ${cust.address.municipality}, ${cust.address.province}, ${cust.address.region}`
-                                :
-                                `${cust.streetAddress}, ${cust.city}, ${cust.province}`
-                            }</td>
+                            <td>{cust._id}</td>
+                            <td>{cust.customerRepresentativeId}</td>
+                            <td>{cust.processingStatus}</td>
                             <td>{new Date(cust.createdAt).toLocaleDateString("en-PH")}</td>
-                            <td>{ cust.emailAddress ?
-                            cust.emailAddress
-                            :
-                            cust.email 
-                        }</td>
+                            <td>{cust.contact}</td>
+                            <td>{cust.details}</td>
+
+
                             
                         </tr>
                     ))}
