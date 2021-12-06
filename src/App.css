@@ -1,3 +1,7 @@
+.App {
+  display: flex;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -33,21 +37,20 @@
   }
 }
 
-@font-face{
-  src: url('./fonts/Comfortaa-VariableFont_wght.ttf');
+@font-face {
+  src: url("./fonts/Comfortaa-VariableFont_wght.ttf");
   font-family: comfartaa;
 }
-body{
+body {
   min-height: 100vh;
 }
-.f-comfartaa{
+.f-comfartaa {
   font-family: comfartaa;
 }
 .has-search .form-control {
   padding-left: 2.375rem;
-  
 }
-.has-search{
+.has-search {
   position: relative;
 }
 
@@ -65,12 +68,12 @@ body{
   pointer-events: none;
   color: #aaa;
 }
-.App .side-menu{
+.App .side-menu {
   min-height: 100vh;
   position: relative;
   /* width: 150px; */
 }
-.App .side-menu .account-item{
+.App .side-menu .account-item {
   position: absolute;
   bottom: 10px;
   left: 0;
