@@ -1,0 +1,57 @@
+.sidebar {
+  width: 20%;
+  max-width: 250px;
+  height: 100%;
+  background-color: #efeeee;
+  position: sticky;
+  display: inline-block;
+}
+.sidebarWarpper {
+  padding: 20px;
+}
+.sidebarMenu {
+  margin-bottom: 10px;
+}
+.sidebarTitle {
+  font-size: 13px;
+  padding-top: 10%;
+  font-size: 20px;
+  font-family: "Comfortaa";
+  text-align: center;
+}
+.sidebarList {
+  list-style: none;
+  padding: 15px;
+  margin-top: 55px;
+}
+.sidebarListItem {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  font-size: "Comfortaa";
+  width: 100%;
+  border-radius: 10px;
+}
+.sidebarListItem:hover {
+  padding: 15px;
+  background-color: #81d8d0;
+}
+.sidebarIcon {
+  margin-right: 5px;
+  font-size: 20px !important;
+}
+.bottomItem {
+  padding-top: 350px;
+
+  display: flex;
+  align-items: center;
+  font-size: "Comfortaa";
+  width: 100%;
+}
+.account-button {
+  background-color: bisque;
+}
+
+.dash-link {
+  color: black;
+}
