@@ -23,51 +23,99 @@ function App() {
   const [auth, setAuth] = useState({ loggedIn: false, jwt: "" });
   let { path, url } = useRouteMatch();
 
-  return (
-    <div className="App">
-      <Router>
-        <SideBar />
+  if (loginSuccess === false) {
+    return (<div className="App">
+    <Router>
 
-        <Switch>
-          <Route path="/registration" component={Registration} />
-          <Route path="/dashboard" component={Dashboard} />
-          <Route path="/sales-order" component={SalesOrder} />
+      <Switch>
+        <Route path="/registration" component={Registration} />
+        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/sales-order" component={SalesOrder} />
 
-          <Route path="/orderProcessing/:id" component={OrderProcessing} />
-          <Route path="/orderCompleted" component={OrderCompleted} />
-          <Route path="/orderRejected" component={OrderRejected} />
-          <Route path="/orderDrafting" component={OrderDrafting} />
-          <Route path="/order-creation" component={OrderCreation} />
+        <Route path="/orderProcessing/:id" component={OrderProcessing} />
+        <Route path="/orderCompleted" component={OrderCompleted} />
+        <Route path="/orderRejected" component={OrderRejected} />
+        <Route path="/orderDrafting" component={OrderDrafting} />
+        <Route path="/order-creation" component={OrderCreation} />
 
-          <Route
-            path="/login"
-            render={(props) => (
-              <Login
-                {...props}
-                setAuth={setAuth}
-                setLoginSuccess={setLoginSuccess}
-                loginSuccess={loginSuccess}
-                auth={auth}
-              />
-            )}
-          />
-          <Route path="/customers" component={CustomerManagement} />
-          <Route path="/SalesGraph" component={SalesGraph} />
-          <Route path="/Sales" component={SalesGraph} />
-          <Route
-            path="/"
-            render={(props) => (
-              <Login
-                {...props}
-                setLoginSuccess={setLoginSuccess}
-                loginSuccess={loginSuccess} 
-              />
-            )}
-          />
-        </Switch>
-      </Router>
-    </div>
-  );
+        <Route
+          path="/login"
+          render={(props) => (
+            <Login
+              {...props}
+              setAuth={setAuth}
+              setLoginSuccess={setLoginSuccess}
+              loginSuccess={loginSuccess}
+              auth={auth}
+            />
+          )}
+        />
+        <Route path="/customers" component={CustomerManagement} />
+        <Route path="/SalesGraph" component={SalesGraph} />
+        <Route path="/Sales" component={SalesGraph} />
+        <Route
+          path="/"
+          render={(props) => (
+            <Login
+              {...props}
+              setLoginSuccess={setLoginSuccess}
+              loginSuccess={loginSuccess} 
+            />
+          )}
+        />
+      </Switch>
+    </Router>
+  </div>)
+  }
+  else {
+    return (
+      <div className="App">
+        <Router>
+          <SideBar />
+  
+          <Switch>
+            <Route path="/registration" component={Registration} />
+            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/sales-order" component={SalesOrder} />
+  
+            <Route path="/orderProcessing/:id" component={OrderProcessing} />
+            <Route path="/orderCompleted" component={OrderCompleted} />
+            <Route path="/orderRejected" component={OrderRejected} />
+            <Route path="/orderDrafting" component={OrderDrafting} />
+            <Route path="/order-creation" component={OrderCreation} />
+  
+            <Route
+              path="/login"
+              render={(props) => (
+                <Login
+                  {...props}
+                  setAuth={setAuth}
+                  setLoginSuccess={setLoginSuccess}
+                  loginSuccess={loginSuccess}
+                  auth={auth}
+                />
+              )}
+            />
+            <Route path="/customers" component={CustomerManagement} />
+            <Route path="/SalesGraph" component={SalesGraph} />
+            <Route path="/Sales" component={SalesGraph} />
+            <Route
+              path="/"
+              render={(props) => (
+                <Login
+                  {...props}
+                  setLoginSuccess={setLoginSuccess}
+                  loginSuccess={loginSuccess} 
+                />
+              )}
+            />
+          </Switch>
+        </Router>
+      </div>
+    );
+  }
+
+  
 }
 
 export default App;
