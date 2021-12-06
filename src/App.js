@@ -1,15 +1,9 @@
 import "./App.css";
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import SideMenu from "./components/SideMenu";
 import CustomerManagement from "./components/CustomerManagement";
-import Sales from "./components/Sales";
 import SalesGraph from "./components/SalesGraph";
-import OrderCreation1 from "./OrderCreation/OrderCreation1";
-import OrderCreation2 from "./OrderCreation/OrderCreation2";
-import OrderCreation3 from "./OrderCreation/OrderCreation3";
-import OrderCreation4 from "./OrderCreation/OrderCreation4";
-import OrderCreation5 from "./OrderCreation/OrderCreation5";
+
 import OrderProcessing from "./OrderCreation/orderProcessing";
 import OrderCompleted from "./OrderCreation/orderCompleted";
 import OrderRejected from "./OrderCreation/orderRejected";
@@ -21,7 +15,6 @@ import OrderCreation from "./OrderCreation/OrderCreation";
 import Registration from "./registration/Registration";
 import SideBar from "./components/SideMenu/SideMenu";
 import { useRouteMatch } from "react-router";
-import { useEffect } from "react";
 import Dashboard from "./components/dashboard/Dashboard";
 import SalesOrder from "./components/SalesOrder/SalesOrder";
 
