@@ -23,6 +23,7 @@ import SideBar from "./components/SideMenu/SideMenu";
 import { useRouteMatch } from "react-router";
 import { useEffect } from "react";
 import Dashboard from "./components/dashboard/Dashboard";
+import SalesOrder from "./components/SalesOrder/SalesOrder";
 
 function App() {
   const [loginSuccess, setLoginSuccess] = useState(false);
@@ -42,6 +43,7 @@ function App() {
           
           <Route path="/registration" component={Registration} />
           <Route path='/dashboard' component={Dashboard} />
+          <Route path="/sales-order" component={SalesOrder} />
 
          
           <Route path="/orderProcessing/:id" component={OrderProcessing} />

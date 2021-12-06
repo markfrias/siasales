@@ -6,12 +6,11 @@ import { Link, Route } from 'react-router-dom'
 import { DropdownButton,Dropdown} from 'react-bootstrap'
 import { useHistory } from 'react-router'
 import {withRouter} from 'react-router';
-import Login from '../../login/Login'
+import Login from '../../login/Login';
 
 
 const SideMenu = () => {
     const history = useHistory();
-
 
     return (
         <div className="sidebar">
@@ -20,26 +19,26 @@ const SideMenu = () => {
 
                     <h4 className="sidebarTitle">wilbur SIS</h4>
                     <ul className="sidebarList">
-                        <Link to="dashboard" onClick={() => {history.push("/dashboard")}}> 
+                        <Link className="dash-link"  to="dashboard" onClick={() => {history.push("/dashboard")}}> 
                         <li className="sidebarListItem">
                             <FontAwesomeIcon icon={faTachometerAlt} size="lg" className="sidebarIcon" />
                             Dashboard
                         </li>
                         </Link>
                        
-                        <Link to="/customers" onClick={() => {history.push("/customers")}}>                        
+                        <Link className="dash-link" to="/customers" onClick={() => {history.push("/customers")}}>                        
                         <li className="sidebarListItem">
                             <FontAwesomeIcon icon={faUser} size="lg" className="sidebarIcon" />
                             Customer
                         </li>
                         </Link>
-                        <Link to="/sales" onClick={() => {history.push("/sales")}}>   
+                        <Link className="dash-link"  to="/sales" onClick={() => {history.push("/sales")}}>   
                         <li className="sidebarListItem">
                             <FontAwesomeIcon icon={faChartLine} size="lg" className="sidebarIcon" />
                             Sales
                         </li>
                         </Link>
-                        <Link to="/order-creation/1" >   
+                        <Link className="dash-link"  to="/order-creation/1" >   
                         <li className="sidebarListItem">
                             <FontAwesomeIcon icon={faPlusCircle} size="lg" className="sidebarIcon" />
                             Sales Order
@@ -50,7 +49,7 @@ const SideMenu = () => {
                                 <FontAwesomeIcon icon={faUserCircle} size="lg" className="sidebarIcon" />
                                 
                                 <DropdownButton title="My Account">
-                                    <Dropdown.Item href="/logout">Logout</Dropdown.Item>
+                                    <Dropdown.Item href="/login">Logout</Dropdown.Item>
                                     
                                 </DropdownButton>
                             </li>
