@@ -27,6 +27,7 @@ import SalesOrder from "./components/SalesOrder/SalesOrder";
 
 function App() {
   const [loginSuccess, setLoginSuccess] = useState(false);
+  const [auth, setAuth] = useState({loggedIn: false, jwt: ""})
   let { path, url } = useRouteMatch();
   
 
@@ -57,8 +58,11 @@ function App() {
             render={(props) => (
               <Login
                 {...props}
+                setAuth={setAuth}
                 setLoginSuccess={setLoginSuccess}
                 loginSuccess={loginSuccess}
+                auth={auth}
+                
               />
             )}
           />
