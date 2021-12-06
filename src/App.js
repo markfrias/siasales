@@ -20,26 +20,20 @@ import SalesOrder from "./components/SalesOrder/SalesOrder";
 
 function App() {
   const [loginSuccess, setLoginSuccess] = useState(false);
-  const [auth, setAuth] = useState({loggedIn: false, jwt: ""})
+  const [auth, setAuth] = useState({ loggedIn: false, jwt: "" });
   let { path, url } = useRouteMatch();
-  
-
 
   return (
     <div className="App">
       {console.log(window.location.href)}
       <Router>
-      {[window.location.href == "http://localhost:3000/" || window.location.href == "http://localhost:3000/login" || window.location.href == "http://localhost:3000/registration/1" ? "" : <SideBar/>]}
-
-        
+        <SideBar />
 
         <Switch>
-          
           <Route path="/registration" component={Registration} />
-          <Route path='/dashboard' component={Dashboard} />
+          <Route path="/dashboard" component={Dashboard} />
           <Route path="/sales-order" component={SalesOrder} />
 
-         
           <Route path="/orderProcessing/:id" component={OrderProcessing} />
           <Route path="/orderCompleted" component={OrderCompleted} />
           <Route path="/orderRejected" component={OrderRejected} />
@@ -55,7 +49,6 @@ function App() {
                 setLoginSuccess={setLoginSuccess}
                 loginSuccess={loginSuccess}
                 auth={auth}
-                
               />
             )}
           />
