@@ -154,6 +154,7 @@ async function changeStatus(status) {
     mode: "cors",
     headers: {
       "Content-Type": "application/json",
+      "Authorization": localStorage.getItem('jwt')
     },
   });
 
@@ -174,6 +175,7 @@ async function changeStatus(status) {
       mode: "cors",
       headers: {
         "Content-Type": "application/json",
+        "Authorization": localStorage.getItem('jwt')
       },
     });
 
