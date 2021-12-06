@@ -82,7 +82,9 @@ async function submitOrder() {
     method: 'POST',
     mode: 'cors',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      "Authorization": localStorage.getItem('jwt')
+
     },
     body: JSON.stringify(form)
   } );
