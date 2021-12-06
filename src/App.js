@@ -25,7 +25,6 @@ function App() {
 
   return (
     <div className="App">
-      {console.log(window.location.href)}
       <Router>
         <SideBar />
 
@@ -56,7 +55,7 @@ function App() {
           <Route path="/SalesGraph" component={SalesGraph} />
           <Route path="/Sales" component={SalesGraph} />
           <Route
-            path=""
+            path="/"
             render={(props) => (
               <Login
                 {...props}
