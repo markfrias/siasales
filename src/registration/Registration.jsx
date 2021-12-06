@@ -49,7 +49,7 @@ function Registration() {
 
   // Handles POST request to submit sales order to server
   async function submitOrder() {
-    const response = await fetch("/users/register", {
+    const response = await fetch("http://wilbur-server.herokuapp.com/users/register", {
       method: "POST",
       mode: "cors",
       headers: {

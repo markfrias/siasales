@@ -149,7 +149,7 @@ function OrderProcessing() {
 
 // Change the status of the order
 async function changeStatus(status) {
-  const response = await fetch(`/salesorder/updateProcessing?id=${orderData.obj._id}&processingStatus=${status}`, {
+  const response = await fetch(`http://wilbur-server.herokuapp.com/salesorder/updateProcessing?id=${orderData.obj._id}&processingStatus=${status}`, {
     method: "PUT",
     mode: "cors",
     headers: {
@@ -170,7 +170,7 @@ async function changeStatus(status) {
 
   // Fetch individual sales order
   async function getUser() {
-    const response = await fetch(`/salesorder/s?id=${id}`, {
+    const response = await fetch(`http://wilbur-server.herokuapp.com/salesorder/s?id=${id}`, {
       method: "GET",
       mode: "cors",
       headers: {

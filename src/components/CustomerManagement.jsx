@@ -31,7 +31,7 @@ const CustomerManagement = () => {
     let productCustomers, shippingCustomers;
     let customerArray = [];
 
-    fetch("http://localhost:8000/customers/")
+    fetch("http://wilbur-server.herokuapp.com/customers/")
       .then((response) => response.json())
       .then((data) => (productCustomers = data))
       .catch((err) => (productCustomers = {}));
