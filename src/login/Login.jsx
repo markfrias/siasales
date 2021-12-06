@@ -51,7 +51,7 @@ const Login = (props) => {
       password: credentials.password,
     };
 
-    const response = await fetch("http://wilbur-server.herokuapp.com/users/signin", {
+    const response = await fetch("https://wilbur-server.herokuapp.com/users/signin", {
       method: "POST",
       mode: "cors",
       headers: {

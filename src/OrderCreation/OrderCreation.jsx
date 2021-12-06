@@ -78,7 +78,7 @@ const OrderCreation = () => {
 
   // Handles POST request to submit sales order to server
 async function submitOrder() {
-  const response = await fetch("http://wilbur-server.herokuapp.com/salesorder",{
+  const response = await fetch("https://wilbur-server.herokuapp.com/salesorder",{
     method: 'POST',
     mode: 'cors',
     headers: {
