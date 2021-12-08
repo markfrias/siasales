@@ -8,6 +8,7 @@ import Table from 'react-bootstrap/Table';
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import LinkButton from '../components/LinkButton';
+import Select from 'react-select';
 
 function MyVerticallyCenteredModal(props) {
   return (
@@ -25,7 +26,18 @@ function MyVerticallyCenteredModal(props) {
       <Modal.Body>
         <div class="modal-4">
           <div class="modal-left">
-            
+
+            {/*<Form.Group className="mb-3" controlId="itemid">
+                  <Form.Label><h4>Item Number:</h4></Form.Label>
+                  <Form.Select name="itemId" value={props.item.itemId} onChange={props.handleChange}>
+                    {props.options.map((option) => (<option value={option.value}>{option.label} </option>))}
+                  </Form.Select>
+  </Form.Group> */}
+
+            <Form.Group>
+              <Form.Select>
+                <options>Hello</options></Form.Select> </Form.Group>
+
               <Form.Group className="mb-3" controlId="itemid">
                   <Form.Label><h4>Item Number:</h4></Form.Label>
                   <Form.Control name="itemId" value={props.item.itemId} onChange={props.handleChange}  />
@@ -76,7 +88,11 @@ function MyVerticallyCenteredModal(props) {
 
 function OrderCreation4(props) {
   useEffect(() => {
-    props.handleProgressChange(80)
+    props.handleProgressChange(80);
+
+    // Fetch item options from inventory system
+    fetchItems();
+
   }, [])
   const initNewItem = {
     itemId: "2233444",
@@ -84,6 +100,27 @@ function OrderCreation4(props) {
     itemDescription: "Manual transmission Toyota Coralla Altis 2019",
     quantity: "",
     unitPrice: 900000 ,
+  }
+
+  function fetchItems() {
+    let items = [];
+
+    fetch("https://inventory-management-system-be.herokuapp.com/products/integration/list")
+    .then((response) => response.json())
+    .then((data) => {
+      // Map items to value, label object
+      items = data.list.map((listItem) => {
+        let objList = {};
+        objList.value = listItem._id;
+        objList.label = listItem.itemName;
+        return objList;
+      })
+
+      console.log(items)
+      setOptions(items)
+      
+    })
+    .catch((err) => ( console.log(err)));
   }
 
   
@@ -113,6 +150,7 @@ let internationalNumberFormat = new Intl.NumberFormat('en-US')
   const [modalShow, setModalShow] = React.useState(false);
   //const [calculations, setCalculations] = useState()
   const [newItem, setNewItem] = useState(initNewItem);
+  const [options, setOptions] = useState([{value: 'Loading', lable: 'Loading'}]);
   return (
     <div class="content1">
         <div class="item4">
@@ -130,6 +168,7 @@ let internationalNumberFormat = new Intl.NumberFormat('en-US')
                     item={newItem}
                     handleBtnClick={() => handleAddBtnClick}
                     handleChange={handleChange}
+                    options={options}
                 />
           </div>
         </div>
