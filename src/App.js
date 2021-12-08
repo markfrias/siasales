@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CustomerManagement from "./components/CustomerManagement";
 import SalesGraph from "./components/SalesGraph";
@@ -14,16 +14,15 @@ import Login from "./login/Login";
 import OrderCreation from "./OrderCreation/OrderCreation";
 import Registration from "./registration/Registration";
 import SideBar from "./components/SideMenu/SideMenu";
-import { useRouteMatch } from "react-router";
 import Dashboard from "./components/dashboard/Dashboard";
 import SalesOrder from "./components/SalesOrder/SalesOrder";
 
 function App() {
   const [loginSuccess, setLoginSuccess] = useState(false);
   const [auth, setAuth] = useState({ loggedIn: false, jwt: "" });
-  let { path, url } = useRouteMatch();
+  
 
-  if (loginSuccess === false) {
+  if (loginSuccess === false || localStorage.getItem('jwt' === undefined)) {
     return (<div className="App">
     <Router>
 
