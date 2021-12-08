@@ -124,11 +124,7 @@ function OrderCreation4(props) {
     unitPrice: 900000,
   };
 
-  function handleItemSelection(event) {
-    console.log(event.target)
-    console.log("Meow")
-  }
-
+ 
   function fetchItems() {
     let items = [];
 
@@ -146,7 +142,6 @@ function OrderCreation4(props) {
           return objList;
         });
 
-        console.log(items);
         setOptions(items);
       })
       .catch((err) => console.log(err));
@@ -156,20 +151,17 @@ function OrderCreation4(props) {
     const target = event.target;
     const value = target.value;
     const name = target.name;
-    console.log(target.value);
     setNewItem({
       ...newItem,
 
       [event.target.name]:
         event.target.name == "quantity" ? parseInt(target.value) : target.value,
     });
-    console.log(target.name)
     if (target.name == "itemId") {
      let item = allItems.find((item) => item._id == target.value);
      setNewItem({...newItem, itemName: item.itemName, itemDescription: item.type, quantity: item.quantity, unitPrice: item.price})
     } else if (target.name == "itemName") {
       let item = allItems.find((item) => item.itemName == target.value);
-      console.log(item)
 
       setNewItem({...newItem, itemId: item._id, itemDescription: item.type, quantity: item.quantity, unitPrice: item.price})
     }
@@ -177,8 +169,7 @@ function OrderCreation4(props) {
 
   function handleAddBtnClick() {
     props.handleTableEntry(newItem);
-    console.log(newItem);
-    console.log(parseFloat(newItem.unitPrice));
+
   }
   let internationalNumberFormat = new Intl.NumberFormat("en-US");
 
